@@ -16107,6 +16107,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       ...super.properties,
       questions: { type: Array, attribute: true },
       scriptFunctionName: { type: String, attribute: true },
+      editing: { type: Boolean, attribute: true, reflect: true },
       _screen: { state: true },
       _studentName: { state: true },
       _currentIndex: { state: true },
@@ -16117,6 +16118,16 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       _feedbackPositive: { state: true },
       _validationError: { state: true },
       _nameInputValue: { state: true },
+      _editing: { state: true },
+      _tempQuestions: { state: true },
+      _editingIndex: { state: true },
+      // Temporary form state for editor
+      _tempQuestionText: { state: true },
+      _tempChoice0: { state: true },
+      _tempChoice1: { state: true },
+      _tempChoice2: { state: true },
+      _tempChoice3: { state: true },
+      _tempCorrectIndex: { state: true },
     };
   }
 
@@ -16134,7 +16145,15 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
     this._feedbackPositive = false;
     this._validationError = "";
     this._nameInputValue = "";
-    this._confettiFn = null;
+    this._editing = false;
+    this._tempQuestions = [];
+    this._editingIndex = -1;
+    this._tempQuestionText = "";
+    this._tempChoice0 = "";
+    this._tempChoice1 = "";
+    this._tempChoice2 = "";
+    this._tempChoice3 = "";
+    this._tempCorrectIndex = "0";
     this.t = {
       // Layar_Nama
       quizTitle: "Kuis Interaktif",
@@ -16162,6 +16181,23 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       messageLow: "Jangan Menyerah! Coba Lagi!",
       restartButton: "Mulai Ulang",
 
+      // Editor
+      editTitle: "Edit Soal Kuis",
+      closeEditor: "Tutup Editor",
+      questionPlaceholder: "Tulis pertanyaan...",
+      choicePlaceholder: "Pilihan {N}",
+      choiceCorrectLabel: "Benar",
+      addQuestionBtn: "Tambah Soal",
+      editQuestionBtn: "Edit",
+      deleteQuestionBtn: "Hapus",
+      saveEditBtn: "Simpan Perubahan",
+      cancelEditBtn: "Batal",
+      saveAllBtn: "Simpan & Keluar",
+      cancelAllBtn: "Batal",
+      minQuestionsError: "Minimal 3 soal harus tersedia",
+      emptyQuestionError: "Pertanyaan tidak boleh kosong",
+      emptyChoiceError: "Semua pilihan jawaban harus diisi",
+
       // Aksesibilitas aria-label
       ariaNameInput: "Kolom nama siswa",
       ariaStartButton: "Tombol mulai kuis",
@@ -16170,6 +16206,22 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       ariaScoreDisplay: "Skor saat ini",
       ariaProgressLabel: "Kemajuan kuis",
       ariaFeedback: "Umpan balik jawaban",
+
+      // Editor aria-labels
+      ariaEditTitle: "Panel editor soal kuis",
+      ariaCloseEditor: "Tutup panel editor",
+      ariaAddForm: "Formulir tambah soal baru",
+      ariaQuestionInput: "Teks pertanyaan",
+      ariaChoiceInput: "Pilihan jawaban {N}",
+      ariaCorrectChoice: "Pilihan jawaban benar",
+      ariaQuestionsList: "Daftar soal yang tersedia",
+      ariaQuestionCard: "Kartu soal",
+      ariaEditQuestion: "Edit soal ini",
+      ariaDeleteQuestion: "Hapus soal ini",
+      ariaSaveEdit: "Simpan perubahan soal",
+      ariaCancelEdit: "Batal mengedit soal",
+      ariaSaveAll: "Simpan semua perubahan dan keluar",
+      ariaCancelAll: "Batal semua perubahan dan keluar",
     };
   }
 
@@ -16391,6 +16443,15 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
     this._feedbackPositive = false;
     this._validationError = "";
     this._nameInputValue = "";
+    this._editing = false;
+    this._tempQuestions = [];
+    this._editingIndex = -1;
+    this._tempQuestionText = "";
+    this._tempChoice0 = "";
+    this._tempChoice1 = "";
+    this._tempChoice2 = "";
+    this._tempChoice3 = "";
+    this._tempCorrectIndex = "0";
   }
 
   _submitToSheets(name, score) {
@@ -16420,6 +16481,339 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       [this.scriptFunctionName](payload);
   }
 
+  _openEditor() {
+    // Guard: only allow opening editor from 'result' screen
+    if (this._screen !== "result") return;
+    if (this._editing) return;
+
+    this._editing = true;
+    this._editingIndex = -1;
+    // Deep copy questions to tempQuestions
+    this._tempQuestions = JSON.parse(JSON.stringify(this.questions));
+    this._screen = "editor";
+  }
+
+  _renderEditorScreen() {
+    return b`
+      <header class="edit-header">
+        <h2 class="edit-title">${this.t.editTitle}</h2>
+        <button
+          class="close-editor-btn"
+          @click="${this._saveAll}"
+          aria-label="${this.t.ariaCloseEditor}"
+        >
+          ${this.t.closeEditor}
+        </button>
+      </header>
+
+      <div class="editor-content">
+        <form class="add-question-form">
+          <textarea
+            class="question-text-input"
+            .value="${this._tempQuestionText}"
+            @input="${(e) => (this._tempQuestionText = e.target.value)}"
+            placeholder="${this.t.questionPlaceholder}"
+            aria-label="${this.t.ariaQuestionInput}"
+          ></textarea>
+
+          <div class="choices-container">
+            ${[0, 1, 2, 3].map(
+              (index) => b`
+                <div class="choice-input-wrapper">
+                  <input
+                    class="choice-input"
+                    .value="${this[`_tempChoice${index}`]}"
+                    @input="${(e) =>
+                      (this[`_tempChoice${index}`] = e.target.value)}"
+                    placeholder="${this.t.choicePlaceholder.replace(
+                      "{N}",
+                      index + 1,
+                    )}"
+                    aria-label="${this.t.ariaChoiceInput.replace(
+                      "{N}",
+                      index + 1,
+                    )}"
+                  />
+                  <label class="choice-label">
+                    <input
+                      type="radio"
+                      name="correct-choice"
+                      .checked="${this._tempCorrectIndex == index}"
+                      @change="${() => (this._tempCorrectIndex = index)}"
+                      aria-label="${this.t.ariaCorrectChoice}"
+                    />
+                    ${this.t.choiceCorrectLabel}
+                  </label>
+                </div>
+              `,
+            )}
+          </div>
+
+          <button
+            type="button"
+            class="add-question-btn"
+            @click="${this._addQuestion}"
+            aria-label="${this.t.ariaAddForm}"
+          >
+            ${this.t.addQuestionBtn}
+          </button>
+        </form>
+
+        <div class="questions-list" aria-label="${this.t.ariaQuestionsList}">
+          ${this._tempQuestions.map(
+            (question, index) => b`
+              <div
+                class="question-card"
+                aria-label="${this.t.ariaQuestionCard}"
+              >
+                ${this._editingIndex === index
+                  ? b`
+                      <!-- Hidden edit form -->
+                      <div class="edit-form">
+                        <textarea
+                          class="edit-question-text-input"
+                          .value="${this._tempQuestionText}"
+                          @input="${(e) =>
+                            (this._tempQuestionText = e.target.value)}"
+                          placeholder="${this.t.questionPlaceholder}"
+                          aria-label="${this.t.ariaQuestionInput}"
+                        ></textarea>
+                        <div class="choices-container">
+                          ${[0, 1, 2, 3].map(
+                            (choiceIndex) => b`
+                              <div class="choice-input-wrapper">
+                                <input
+                                  class="edit-choice-input"
+                                  .value="${this[`_tempChoice${choiceIndex}`]}"
+                                  @input="${(e) =>
+                                    (this[`_tempChoice${choiceIndex}`] =
+                                      e.target.value)}"
+                                  placeholder="${this.t.choicePlaceholder.replace(
+                                    "{N}",
+                                    choiceIndex + 1,
+                                  )}"
+                                  aria-label="${this.t.ariaChoiceInput.replace(
+                                    "{N}",
+                                    choiceIndex + 1,
+                                  )}"
+                                />
+                                <label class="choice-label">
+                                  <input
+                                    type="radio"
+                                    name="correct-choice-edit"
+                                    .checked="${this._tempCorrectIndex ==
+                                    choiceIndex}"
+                                    @change="${() =>
+                                      (this._tempCorrectIndex = choiceIndex)}"
+                                    aria-label="${this.t.ariaCorrectChoice}"
+                                  />
+                                  ${this.t.choiceCorrectLabel}
+                                </label>
+                              </div>
+                            `,
+                          )}
+                        </div>
+                        <div class="edit-form-actions">
+                          <button
+                            type="button"
+                            class="save-edit-btn"
+                            @click="${this._saveEditQuestion}"
+                            aria-label="${this.t.ariaSaveEdit}"
+                          >
+                            ${this.t.saveEditBtn}
+                          </button>
+                          <button
+                            type="button"
+                            class="cancel-edit-btn"
+                            @click="${this._cancelEditQuestion}"
+                            aria-label="${this.t.ariaCancelEdit}"
+                          >
+                            ${this.t.cancelEditBtn}
+                          </button>
+                        </div>
+                      </div>
+                    `
+                  : b`
+                      <!-- Question preview with actions -->
+                      <div class="card-header">
+                        <span class="question-preview">
+                          ${question.question}
+                        </span>
+                        <div class="card-actions">
+                          <button
+                            class="edit-btn"
+                            @click="${() => this._startEditQuestion(index)}"
+                            aria-label="${this.t.ariaEditQuestion}"
+                          >
+                            ${this.t.editQuestionBtn}
+                          </button>
+                          <button
+                            class="delete-btn"
+                            ?disabled="${this._tempQuestions.length <= 3}"
+                            @click="${() => this._deleteQuestion(index)}"
+                            aria-label="${this.t.ariaDeleteQuestion}"
+                          >
+                            ${this.t.deleteQuestionBtn}
+                          </button>
+                        </div>
+                      </div>
+                    `}
+              </div>
+            `,
+          )}
+        </div>
+      </div>
+
+      <div class="editor-actions">
+        <button
+          class="save-all-btn"
+          @click="${this._saveAll}"
+          aria-label="${this.t.ariaSaveAll}"
+        >
+          ${this.t.saveAllBtn}
+        </button>
+        <button
+          class="cancel-all-btn"
+          @click="${this._cancelAll}"
+          aria-label="${this.t.ariaCancelAll}"
+        >
+          ${this.t.cancelAllBtn}
+        </button>
+      </div>
+    `;
+  }
+
+  _addQuestion() {
+    // Guard: validate form
+    if (
+      !this._tempQuestionText.trim() ||
+      !this._tempChoice0.trim() ||
+      !this._tempChoice1.trim() ||
+      !this._tempChoice2.trim() ||
+      !this._tempChoice3.trim()
+    ) {
+      console.warn(this.t.emptyChoiceError);
+      return;
+    }
+
+    const newQuestion = {
+      question: this._tempQuestionText.trim(),
+      choices: [
+        this._tempChoice0.trim(),
+        this._tempChoice1.trim(),
+        this._tempChoice2.trim(),
+        this._tempChoice3.trim(),
+      ],
+      correctIndex: parseInt(this._tempCorrectIndex, 10),
+    };
+
+    this._tempQuestions.push(newQuestion);
+    this._tempQuestionText = "";
+    this._tempChoice0 = "";
+    this._tempChoice1 = "";
+    this._tempChoice2 = "";
+    this._tempChoice3 = "";
+    this._tempCorrectIndex = "0";
+  }
+
+  _deleteQuestion(index) {
+    // Guard: ensure minimum 3 questions remain
+    if (this._tempQuestions.length <= 3) {
+      console.warn(this.t.minQuestionsError);
+      return;
+    }
+
+    this._tempQuestions.splice(index, 1);
+    if (this._editingIndex === index) {
+      this._editingIndex = -1;
+    }
+  }
+
+  _startEditQuestion(index) {
+    if (index < 0 || index >= this._tempQuestions.length) return;
+
+    this._editingIndex = index;
+    const question = this._tempQuestions[index];
+    this._tempQuestionText = question.question;
+    this._tempChoice0 = question.choices[0] || "";
+    this._tempChoice1 = question.choices[1] || "";
+    this._tempChoice2 = question.choices[2] || "";
+    this._tempChoice3 = question.choices[3] || "";
+    this._tempCorrectIndex = question.correctIndex.toString();
+  }
+
+  _saveEditQuestion() {
+    // Guard: validate form
+    if (
+      !this._tempQuestionText.trim() ||
+      !this._tempChoice0.trim() ||
+      !this._tempChoice1.trim() ||
+      !this._tempChoice2.trim() ||
+      !this._tempChoice3.trim()
+    ) {
+      console.warn(this.t.emptyChoiceError);
+      return;
+    }
+
+    // Guard: must be editing an existing question
+    if (
+      this._editingIndex < 0 ||
+      this._editingIndex >= this._tempQuestions.length
+    )
+      return;
+
+    this._tempQuestions[this._editingIndex] = {
+      question: this._tempQuestionText.trim(),
+      choices: [
+        this._tempChoice0.trim(),
+        this._tempChoice1.trim(),
+        this._tempChoice2.trim(),
+        this._tempChoice3.trim(),
+      ],
+      correctIndex: parseInt(this._tempCorrectIndex, 10),
+    };
+
+    this._editingIndex = -1;
+    this._tempQuestionText = "";
+    this._tempChoice0 = "";
+    this._tempChoice1 = "";
+    this._tempChoice2 = "";
+    this._tempChoice3 = "";
+    this._tempCorrectIndex = "0";
+  }
+
+  _cancelEditQuestion() {
+    // Guard: must be editing an existing question
+    if (this._editingIndex < 0) return;
+
+    this._editingIndex = -1;
+    this._tempQuestionText = "";
+    this._tempChoice0 = "";
+    this._tempChoice1 = "";
+    this._tempChoice2 = "";
+    this._tempChoice3 = "";
+    this._tempCorrectIndex = "0";
+  }
+
+  _saveAll() {
+    // Guard: only allow saving from 'editor' screen
+    if (this._screen !== "editor") return;
+
+    this.questions = JSON.parse(JSON.stringify(this._tempQuestions));
+    this._editing = false;
+    this._editingIndex = -1;
+    this._screen = "result";
+  }
+
+  _cancelAll() {
+    // Guard: only allow cancelling from 'editor' screen
+    if (this._screen !== "editor") return;
+
+    this._editing = false;
+    this._editingIndex = -1;
+    this._screen = "result";
+  }
+
   render() {
     switch (this._screen) {
       case "name":
@@ -16428,6 +16822,8 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
         return this._renderQuestionScreen();
       case "result":
         return this._renderResultScreen();
+      case "editor":
+        return this._renderEditorScreen();
       default:
         return this._renderNameScreen();
     }
@@ -16647,6 +17043,335 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
           outline: none;
           box-shadow: 0 0 0 3px
             var(--ddd-theme-polaris-focus-ring, var(--ddd-theme-link-light));
+        }
+
+        /* Editor Screen Styles */
+        .edit-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: var(--ddd-spacing-6);
+          padding-bottom: var(--ddd-spacing-4);
+          border-bottom: 1px solid var(--ddd-theme-polaris-border);
+        }
+
+        .edit-title {
+          font-size: var(--ddd-font-size-xl);
+          font-weight: var(--ddd-font-weight-bold);
+          color: var(--ddd-theme-primary);
+          margin: 0;
+        }
+
+        .close-editor-btn {
+          padding: var(--ddd-spacing-2) var(--ddd-spacing-4);
+          font-size: var(--ddd-font-size-s);
+          font-weight: var(--ddd-font-weight-medium);
+          background: var(--ddd-theme-error);
+          color: var(--ddd-theme-on-error);
+          border: none;
+          border-radius: var(--ddd-radius-md);
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+
+        .close-editor-btn:hover {
+          background: var(--ddd-theme-accent);
+        }
+
+        .close-editor-btn:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 3px
+            var(--ddd-theme-polaris-focus-ring, var(--ddd-theme-link-light));
+        }
+
+        .editor-content {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ddd-spacing-6);
+        }
+
+        .add-question-form {
+          padding: var(--ddd-spacing-4);
+          background: var(--ddd-theme-polaris-surface);
+          border-radius: var(--ddd-radius-md);
+          border: 1px solid var(--ddd-theme-polaris-border);
+        }
+
+        .question-text-input {
+          width: 100%;
+          min-height: 80px;
+          padding: var(--ddd-spacing-3);
+          font-size: var(--ddd-font-size-m);
+          font-family: var(--ddd-font-primary);
+          border: 1px solid var(--ddd-theme-polaris-border);
+          border-radius: var(--ddd-radius-sm);
+          resize: vertical;
+          box-sizing: border-box;
+          margin-bottom: var(--ddd-spacing-4);
+        }
+
+        .question-text-input:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 2px
+            var(--ddd-theme-polaris-focus-ring, var(--ddd-theme-link-light));
+        }
+
+        .choices-container {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ddd-spacing-3);
+          margin-bottom: var(--ddd-spacing-4);
+        }
+
+        .choice-input-wrapper {
+          display: flex;
+          align-items: center;
+          gap: var(--ddd-spacing-3);
+        }
+
+        .choice-input,
+        .edit-choice-input {
+          flex: 1;
+          padding: var(--ddd-spacing-2) var(--ddd-spacing-3);
+          font-size: var(--ddd-font-size-m);
+          border: 1px solid var(--ddd-theme-polaris-border);
+          border-radius: var(--ddd-radius-sm);
+          font-family: var(--ddd-font-primary);
+        }
+
+        .choice-input:focus-visible,
+        .edit-choice-input:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 2px
+            var(--ddd-theme-polaris-focus-ring, var(--ddd-theme-link-light));
+        }
+
+        .choice-label {
+          display: flex;
+          align-items: center;
+          gap: var(--ddd-spacing-2);
+          font-size: var(--ddd-font-size-s);
+          color: var(--ddd-theme-secondary);
+          cursor: pointer;
+        }
+
+        .add-question-btn,
+        .save-all-btn,
+        .cancel-all-btn {
+          width: 100%;
+          padding: var(--ddd-spacing-3) var(--ddd-spacing-4);
+          font-size: var(--ddd-font-size-m);
+          font-weight: var(--ddd-font-weight-bold);
+          border: none;
+          border-radius: var(--ddd-radius-md);
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+
+        .add-question-btn {
+          background: var(--ddd-theme-polaris-primary);
+          color: var(--ddd-theme-on-primary);
+        }
+
+        .add-question-btn:hover {
+          background: var(--ddd-theme-accent);
+        }
+
+        .add-question-btn:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 3px
+            var(--ddd-theme-polaris-focus-ring, var(--ddd-theme-link-light));
+        }
+
+        .questions-list {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ddd-spacing-4);
+        }
+
+        .question-card {
+          padding: var(--ddd-spacing-4);
+          background: var(--ddd-theme-polaris-surface);
+          border-radius: var(--ddd-radius-md);
+          border: 1px solid var(--ddd-theme-polaris-border);
+        }
+
+        .card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: var(--ddd-spacing-4);
+        }
+
+        .question-preview {
+          flex: 1;
+          font-size: var(--ddd-font-size-m);
+          color: var(--ddd-theme-secondary);
+          word-break: break-word;
+        }
+
+        .card-actions {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ddd-spacing-2);
+        }
+
+        .edit-btn,
+        .delete-btn {
+          padding: var(--ddd-spacing-2) var(--ddd-spacing-3);
+          font-size: var(--ddd-font-size-s);
+          font-weight: var(--ddd-font-weight-medium);
+          border: none;
+          border-radius: var(--ddd-radius-sm);
+          cursor: pointer;
+          transition:
+            background 0.2s,
+            color 0.2s;
+        }
+
+        .edit-btn {
+          background: var(--ddd-theme-polaris-surface-hover);
+          color: var(--ddd-theme-primary);
+        }
+
+        .edit-btn:hover:not([disabled]) {
+          background: var(--ddd-theme-accent);
+        }
+
+        .edit-btn:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 3px
+            var(--ddd-theme-polaris-focus-ring, var(--ddd-theme-link-light));
+        }
+
+        .delete-btn {
+          background: transparent;
+          color: var(--ddd-theme-error);
+        }
+
+        .delete-btn:hover:not([disabled]) {
+          background: var(--ddd-theme-error);
+          color: var(--ddd-theme-on-error);
+        }
+
+        .delete-btn:disabled {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
+
+        .edit-form {
+          display: flex;
+          flex-direction: column;
+          gap: var(--ddd-spacing-3);
+        }
+
+        .edit-question-text-input {
+          width: 100%;
+          min-height: 80px;
+          padding: var(--ddd-spacing-3);
+          font-size: var(--ddd-font-size-m);
+          font-family: var(--ddd-font-primary);
+          border: 1px solid var(--ddd-theme-polaris-border);
+          border-radius: var(--ddd-radius-sm);
+          resize: vertical;
+          box-sizing: border-box;
+        }
+
+        .edit-form-actions {
+          display: flex;
+          gap: var(--ddd-spacing-3);
+        }
+
+        .save-edit-btn {
+          flex: 1;
+          padding: var(--ddd-spacing-2) var(--ddd-spacing-3);
+          font-size: var(--ddd-font-size-s);
+          font-weight: var(--ddd-font-weight-bold);
+          background: var(--ddd-theme-success);
+          color: var(--ddd-theme-on-success);
+          border: none;
+          border-radius: var(--ddd-radius-sm);
+          cursor: pointer;
+        }
+
+        .save-edit-btn:hover {
+          background: var(--ddd-theme-accent);
+        }
+
+        .cancel-edit-btn {
+          flex: 1;
+          padding: var(--ddd-spacing-2) var(--ddd-spacing-3);
+          font-size: var(--ddd-font-size-s);
+          font-weight: var(--ddd-font-weight-medium);
+          background: transparent;
+          color: var(--ddd-theme-secondary);
+          border: 1px solid var(--ddd-theme-polaris-border);
+          border-radius: var(--ddd-radius-sm);
+          cursor: pointer;
+        }
+
+        .cancel-edit-btn:hover {
+          background: var(--ddd-theme-polaris-surface-hover);
+        }
+
+        .editor-actions {
+          display: flex;
+          gap: var(--ddd-spacing-4);
+          margin-top: var(--ddd-spacing-4);
+        }
+
+        .save-all-btn {
+          flex: 1;
+          background: var(--ddd-theme-polaris-primary);
+          color: var(--ddd-theme-on-primary);
+        }
+
+        .save-all-btn:hover {
+          background: var(--ddd-theme-accent);
+        }
+
+        .cancel-all-btn {
+          flex: 1;
+          background: transparent;
+          color: var(--ddd-theme-secondary);
+          border: 1px solid var(--ddd-theme-polaris-border);
+        }
+
+        .cancel-all-btn:hover {
+          background: var(--ddd-theme-polaris-surface-hover);
+        }
+
+        .save-all-btn:focus-visible,
+        .cancel-all-btn:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 3px
+            var(--ddd-theme-polaris-focus-ring, var(--ddd-theme-link-light));
+        }
+
+        @media (max-width: 480px) {
+          .card-header {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
+          .card-actions {
+            flex-direction: row;
+            width: 100%;
+          }
+
+          .edit-btn,
+          .delete-btn {
+            flex: 1;
+          }
+
+          .editor-actions {
+            flex-direction: column;
+          }
+
+          .save-all-btn,
+          .cancel-all-btn {
+            width: 100%;
+          }
         }
       `,
     ];
