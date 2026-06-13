@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-course-syllabus</id>
+<indent>0</indent>
+<location>pages/item-course-syllabus/index.xml</location>
+<slug>syllabus</slug>
+<order>0</order>
+<parent></parent>
+<title>Syllabus</title>
+<description></description>
+<metadata>
+<published>true</published>
+<hideInMenu>false</hideInMenu>
+<tags>
+<item>syllabus</item>
+<item>overview</item>
+</tags>
+<created>1781318422</created>
+<updated>1781318422</updated>
+</metadata>
+<content><![CDATA[<h2>Course Syllabus</h2><p>Outline the course description, learning objectives, required materials, grading breakdown, and major deadlines. Keep this page focused on the big picture of what learners will accomplish.</p>]]></content>
+</item>

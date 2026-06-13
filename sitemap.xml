@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://localhost/sites/pen-todo/syllabus</loc>
+    <lastmod>2026-06-13T02:40:22.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost/sites/pen-todo/lesson-1</loc>
+    <lastmod>2026-06-13T02:40:22.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://localhost/sites/pen-todo/lesson-1-introduction</loc>
+    <lastmod>2026-06-13T02:40:22.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost/sites/pen-todo/lesson-1-content</loc>
+    <lastmod>2026-06-13T02:40:22.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://localhost/sites/pen-todo/lesson-1-conclusion</loc>
+    <lastmod>2026-06-13T02:40:22.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+</urlset>

@@ -1,0 +1,21 @@
+{
+  "id": "item-course-syllabus",
+  "indent": 0,
+  "location": "pages/item-course-syllabus/index.json",
+  "slug": "syllabus",
+  "order": 0,
+  "parent": null,
+  "title": "Syllabus",
+  "description": "",
+  "metadata": {
+    "published": true,
+    "hideInMenu": false,
+    "tags": [
+      "syllabus",
+      "overview"
+    ],
+    "created": 1781318422,
+    "updated": 1781318422
+  },
+  "content": "<h2>Course Syllabus</h2><p>Outline the course description, learning objectives, required materials, grading breakdown, and major deadlines. Keep this page focused on the big picture of what learners will accomplish.</p>"
+}

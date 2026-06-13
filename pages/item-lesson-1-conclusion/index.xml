@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-lesson-1-conclusion</id>
+<indent>1</indent>
+<location>pages/item-lesson-1-conclusion/index.xml</location>
+<slug>lesson-1-conclusion</slug>
+<order>4</order>
+<parent>item-lesson-1</parent>
+<title>Lesson 1: Conclusion</title>
+<description></description>
+<metadata>
+<published>true</published>
+<hideInMenu>false</hideInMenu>
+<tags>
+<item>conclusion</item>
+<item>summary</item>
+</tags>
+<created>1781318422</created>
+<updated>1781318422</updated>
+</metadata>
+<content><![CDATA[<h2>Lesson 1 Conclusion</h2><p>Wrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaways, and pointing learners toward next steps such as reflections, assessments, or the next lesson.</p>]]></content>
+</item>

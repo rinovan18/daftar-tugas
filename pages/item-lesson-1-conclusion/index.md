@@ -1,0 +1,4 @@
+Lesson 1 Conclusion
+-------------------
+
+Wrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaways, and pointing learners toward next steps such as reflections, assessments, or the next lesson.

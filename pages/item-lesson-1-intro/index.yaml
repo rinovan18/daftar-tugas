@@ -1,0 +1,20 @@
+id: item-lesson-1-intro
+indent: 1
+location: pages/item-lesson-1-intro/index.yaml
+slug: lesson-1-introduction
+order: 2
+parent: item-lesson-1
+title: 'Lesson 1: Introduction'
+description: ''
+metadata:
+  published: true
+  hideInMenu: false
+  tags:
+    - intro
+    - context
+  created: 1781318422
+  updated: 1781318422
+content: >-
+  <h2>Lesson 1 Introduction</h2><p>Give learners context for this lesson: why
+  the topic matters, how it connects to prior knowledge, and what questions they
+  should keep in mind as they move through the content.</p>

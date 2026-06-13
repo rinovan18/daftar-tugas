@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>pen-todo</title>
+    <link>https://localhost/sites/pen-todo/</link>
+    <description></description>
+    <copyright>Copyright (C) 2026 https://localhost/sites/pen-todo</copyright>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 13 Jun 2026 02:40:22 GMT</lastBuildDate>
+    <generator>HAXcms NodeJS</generator>
+    <atom:link href="https://localhost/sites/pen-todo/rss.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Syllabus</title>
+      <link>https://localhost/sites/pen-todo/syllabus</link>
+      <description>Course Syllabus Outline the course description, learning objectives, required materials, grading breakdown, and major deadlines. Keep this page focused on the big picture of what learners will accomplish.</description>
+      <category>syllabus</category>
+      <category>overview</category>
+      <guid>https://localhost/sites/pen-todo/syllabus</guid>
+      <pubDate>Sat, 13 Jun 2026 02:40:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>Lesson 1</title>
+      <link>https://localhost/sites/pen-todo/lesson-1</link>
+      <description>Lesson 1 Overview Use this page to introduce the focus of Lesson 1 and how it connects to the rest of the course. Summarize what learners should know or be able to do after completing this lesson.</description>
+      <category>lesson</category>
+      <category>overview</category>
+      <guid>https://localhost/sites/pen-todo/lesson-1</guid>
+      <pubDate>Sat, 13 Jun 2026 02:40:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>Lesson 1: Introduction</title>
+      <link>https://localhost/sites/pen-todo/lesson-1-introduction</link>
+      <description>Lesson 1 Introduction Give learners context for this lesson: why the topic matters, how it connects to prior knowledge, and what questions they should keep in mind as they move through the content.</description>
+      <category>intro</category>
+      <category>context</category>
+      <guid>https://localhost/sites/pen-todo/lesson-1-introduction</guid>
+      <pubDate>Sat, 13 Jun 2026 02:40:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>Lesson 1: Content</title>
+      <link>https://localhost/sites/pen-todo/lesson-1-content</link>
+      <description>Lesson 1 Content Organize the main instructional materials for Lesson 1 here. Combine text, media, and interactive elements to guide learners through concepts, examples, and practice opportunities.</description>
+      <category>content</category>
+      <category>instruction</category>
+      <guid>https://localhost/sites/pen-todo/lesson-1-content</guid>
+      <pubDate>Sat, 13 Jun 2026 02:40:22 GMT</pubDate>
+    </item>
+    <item>
+      <title>Lesson 1: Conclusion</title>
+      <link>https://localhost/sites/pen-todo/lesson-1-conclusion</link>
+      <description>Lesson 1 Conclusion Wrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaways, and pointing learners toward next steps such as reflections, assessments, or the next lesson.</description>
+      <category>conclusion</category>
+      <category>summary</category>
+      <guid>https://localhost/sites/pen-todo/lesson-1-conclusion</guid>
+      <pubDate>Sat, 13 Jun 2026 02:40:22 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

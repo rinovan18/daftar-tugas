@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item>
+<id>item-lesson-1-content</id>
+<indent>1</indent>
+<location>pages/item-lesson-1-content/index.xml</location>
+<slug>lesson-1-content</slug>
+<order>3</order>
+<parent>item-lesson-1</parent>
+<title>Lesson 1: Content</title>
+<description></description>
+<metadata>
+<published>true</published>
+<hideInMenu>false</hideInMenu>
+<tags>
+<item>content</item>
+<item>instruction</item>
+</tags>
+<created>1781318422</created>
+<updated>1781318422</updated>
+</metadata>
+<content><![CDATA[<h2>Lesson 1 Content</h2><p>Organize the main instructional materials for Lesson 1 here. Combine text, media, and interactive elements to guide learners through concepts, examples, and practice opportunities.</p>]]></content>
+</item>
