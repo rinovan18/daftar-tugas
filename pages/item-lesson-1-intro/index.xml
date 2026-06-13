@@ -4,7 +4,7 @@
 <indent>0</indent>
 <location>pages/item-lesson-1-intro/index.xml</location>
 <slug>lesson-1-introduction</slug>
-<order>1</order>
+<order>0</order>
 <parent>item-lesson-1</parent>
 <title>Lesson 1: Introduction</title>
 <description>Lesson 1 Introduction
@@ -16,7 +16,7 @@ Give learners context for this lesson: why the topic matters, how it connects to
 <hideInMenu>false</hideInMenu>
 <tags>intro,context</tags>
 <created>1781318422</created>
-<updated>1781344881</updated>
+<updated>1781344943</updated>
 <locked>false</locked>
 <readtime>1</readtime>
 <videos>
@@ -32,7 +32,7 @@ Give learners context for this lesson: why the topic matters, how it connects to
 <p></p>
 <p>tes</p>
 <p>ujian</p>
-<explode-quiz>1</explode-quiz>
+<explode-quiz></explode-quiz>
 <p></p>
 ]]></content>
 </item>

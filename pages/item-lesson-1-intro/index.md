@@ -6,5 +6,3 @@ Give learners context for this lesson: why the topic matters, how it connects to
 tes
 
 ujian
-
-<explode-quiz>1</explode-quiz>

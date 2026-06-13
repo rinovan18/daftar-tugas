@@ -15,7 +15,7 @@
         "canonical": true
       },
       "created": 1781318422,
-      "updated": 1781344881,
+      "updated": 1781344943,
       "git": {
         "vendor": "github",
         "branch": "gh-pages"
@@ -94,7 +94,7 @@
       "indent": 0,
       "location": "pages/item-lesson-1-intro/index.html",
       "slug": "lesson-1-introduction",
-      "order": 1,
+      "order": 0,
       "parent": "item-lesson-1",
       "title": "Lesson 1: Introduction",
       "description": "Lesson 1 Introduction\nGive learners context for this lesson: why the topic matters, how it connects to\n  prior knowledge, and what questions they should keep in mind as they move through\n  the conten",
@@ -103,7 +103,7 @@
         "hideInMenu": false,
         "tags": "intro,context",
         "created": 1781318422,
-        "updated": 1781344881,
+        "updated": 1781344943,
         "locked": false,
         "readtime": 1,
         "videos": [],
