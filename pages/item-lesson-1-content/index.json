@@ -3,7 +3,7 @@
   "indent": 0,
   "location": "pages/item-lesson-1-content/index.json",
   "slug": "lesson-1-content",
-  "order": 2,
+  "order": 1,
   "parent": "item-lesson-1",
   "title": "Lesson 1: Content",
   "description": "Lesson 1 Content\nOrganize the main instructional materials for Lesson 1 here. Combine text, media,\n  and interactive elements to guide learners through concepts, examples, and practice\n  opportunitie",
@@ -12,11 +12,11 @@
     "hideInMenu": false,
     "tags": "content,instruction",
     "created": 1781318422,
-    "updated": 1781329152,
+    "updated": 1781330914,
     "locked": false,
     "readtime": 1,
     "videos": [],
     "images": []
   },
-  "content": "\n<h2 id=\"h2--654010718\">Lesson 1 Content</h2>\n<p>Organize the main instructional materials for Lesson 1 here. Combine text, media,\n  and interactive elements to guide learners through concepts, examples, and practice\n  opportunities.</p>\n<p></p>\n<p>nambah &#60;todo&#62;</p>\n<p></p>\n<todo-list>1</todo-list>\n"
+  "content": "\n<h2 id=\"h2--654010718\">Lesson 1 Content</h2>\n<p>Organize the main instructional materials for Lesson 1 here. Combine text, media,\n  and interactive elements to guide learners through concepts, examples, and practice\n  opportunities.</p>\n<p></p>\n<p>nambah &#60;todo&#62;</p>\n<p></p>\n<todo-list tasks=\"[{&quot;id&quot;:&quot;418cf816-19b8-4f39-8573-224072819815&quot;,&quot;text&quot;:&quot;dfgfdsgfds&quot;,&quot;completed&quot;:false},{&quot;id&quot;:&quot;de18cdf5-77d9-422d-9275-ffe8c41f4a70&quot;,&quot;text&quot;:&quot;sfgfdsgfd&quot;,&quot;completed&quot;:false},{&quot;id&quot;:&quot;cc86438a-3080-4dad-8ce1-e22bdb170f8b&quot;,&quot;text&quot;:&quot;tes1111&quot;,&quot;completed&quot;:false}]\">1</todo-list>\n"
 }
