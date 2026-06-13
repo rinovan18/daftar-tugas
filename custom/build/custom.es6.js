@@ -16096,12 +16096,6 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
               "Nama fungsi Google Apps Script untuk menerima hasil kuis",
             inputMethod: "textfield",
           },
-          {
-            property: "editable",
-            title: "Mode Edit (Instruktur)",
-            description: "Aktifkan untuk menampilkan tombol edit soal kuis",
-            inputMethod: "boolean",
-          },
         ],
         advanced: [],
       },
@@ -16111,29 +16105,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
   static get properties() {
     return {
       ...super.properties,
-      questions: {
-        type: Array,
-        attribute: "questions",
-        reflect: true,
-        converter: {
-          fromAttribute: (value) => {
-            if (!value) return null;
-            try {
-              return JSON.parse(value);
-            } catch {
-              return null;
-            }
-          },
-          toAttribute: (value) => {
-            if (!value) return null;
-            try {
-              return JSON.stringify(value);
-            } catch {
-              return null;
-            }
-          },
-        },
-      },
+      questions: { type: Array, attribute: true },
       scriptFunctionName: { type: String, attribute: true },
       editable: { type: Boolean, attribute: true, reflect: true },
       editing: { type: Boolean, attribute: true, reflect: true },
@@ -16258,7 +16230,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
 
   updated(changedProperties) {
     super.updated(changedProperties);
-    if (!this.questions || this.questions.length === 0) {
+    if (this.questions && this.questions.length === 0) {
       this.questions = DEFAULT_QUESTIONS;
     }
   }
@@ -16330,15 +16302,13 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       ${this._validationError
         ? b`<p class="validation-error">${this._validationError}</p>`
         : ""}
-      ${this.editable
-        ? b`<button
-            class="edit-questions-btn"
-            @click="${this._openEditorFromName}"
-            aria-label="${this.t.ariaCloseEditor}"
-          >
-            ${this.t.editTitle}
-          </button>`
-        : ""}
+      <button
+        class="edit-questions-btn"
+        @click="${this._openEditorFromName}"
+        aria-label="${this.t.ariaCloseEditor}"
+      >
+        ${this.t.editTitle}
+      </button>
     `;
   }
 
@@ -16469,15 +16439,13 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       >
         ${this.t.restartButton}
       </button>
-      ${this.editable
-        ? b`<button
-            class="edit-questions-btn"
-            @click="${this._openEditor}"
-            aria-label="${this.t.ariaCloseEditor}"
-          >
-            ${this.t.editTitle}
-          </button>`
-        : ""}
+      <button
+        class="edit-questions-btn"
+        @click="${this._openEditor}"
+        aria-label="${this.t.ariaCloseEditor}"
+      >
+        ${this.t.editTitle}
+      </button>
     `;
   }
 
