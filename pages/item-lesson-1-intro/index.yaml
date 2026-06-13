@@ -6,37 +6,48 @@ order: 0
 parent: item-lesson-1
 title: 'Lesson 1: Introduction'
 description: >-
-  Lesson 1 Introduction
-
-  Give learners context for this lesson: why the topic matters, how it connects
-  to
-    prior knowledge, and what questions they should keep in mind as they move through
-    the conten
+  Lesson 1 Introduction Give learners context for this lesson: why the topic
+  matters, how it connects to   prior knowledge, and what questions they should
+  keep in mind as they move through   the conten
 metadata:
   published: true
   hideInMenu: false
   tags: intro,context
   created: 1781318422
-  updated: 1781344984
+  updated: 1781347084
   locked: false
   readtime: 1
   videos: []
   images: []
 content: >
 
-  <h2 id="h2-1685776273">Lesson 1 Introduction</h2>
+  <h2>Lesson 1 Introduction</h2>
 
   <p>Give learners context for this lesson: why the topic matters, how it
   connects to
     prior knowledge, and what questions they should keep in mind as they move through
     the content.</p>
-  <p></p>
-
   <p>tes</p>
 
-  <explode-quiz .questions="${JSON.stringify([
-          {
-            question: " apa="" warna="" bendera="" indonesia?',="" choices:="" ['merah="" putih',="" 'putih="" merah',="" 'merah="" biru',="" 'hijau="" kuning'],="" correctindex:="" 0,="" },="" {="" question:="" 'berapa="" jumlah="" hari="" dalam="" tahun="" kabisat?',="" ['364',="" '365',="" '366',="" '367'],="" 2,="" ])}'=""></explode-quiz>
-  <explode-quiz></explode-quiz>
+  <explode-quiz .questions="${JSON.stringify([         {           question: "
+  apa="" warna="" bendera="" indonesia?="" ',="" choices:="" ['merah="" putih=""
+  'putih="" merah="" 'merah="" biru="" 'hijau="" kuning="" '],=""
+  correctindex:="" 0,="" },="" {="" question:="" 'berapa="" jumlah="" hari=""
+  dalam="" tahun="" kabisat?="" ['364="" '365="" '366="" '367="" 2,="" ])}'=""
+  questions="[{&quot;question&quot;:&quot;Apa ibu kota
+  Indonesia?&quot;,&quot;choices&quot;:[&quot;Bandung&quot;,&quot;Surabaya&quot;,&quot;Jakarta&quot;,&quot;Medan&quot;],&quot;correctIndex&quot;:2},{&quot;question&quot;:&quot;Berapa
+  hasil dari 7 ×
+  8?&quot;,&quot;choices&quot;:[&quot;54&quot;,&quot;56&quot;,&quot;58&quot;,&quot;60&quot;],&quot;correctIndex&quot;:1},{&quot;question&quot;:&quot;Planet
+  terdekat dengan Matahari
+  adalah?&quot;,&quot;choices&quot;:[&quot;Venus&quot;,&quot;Bumi&quot;,&quot;Mars&quot;,&quot;Merkurius&quot;],&quot;correctIndex&quot;:3}]"
+  script-function-name="submitQuizResult" _screen="name" _current-index="0"
+  _score="0" _selected-index="-1"></explode-quiz>
 
-  <p></p>
+  <explode-quiz questions="[{&quot;question&quot;:&quot;Apa ibu kota
+  Indonesia?&quot;,&quot;choices&quot;:[&quot;Bandung&quot;,&quot;Surabaya&quot;,&quot;Jakarta&quot;,&quot;Medan&quot;],&quot;correctIndex&quot;:2},{&quot;question&quot;:&quot;Berapa
+  hasil dari 7 ×
+  8?&quot;,&quot;choices&quot;:[&quot;54&quot;,&quot;56&quot;,&quot;58&quot;,&quot;60&quot;],&quot;correctIndex&quot;:1},{&quot;question&quot;:&quot;Planet
+  terdekat dengan Matahari
+  adalah?&quot;,&quot;choices&quot;:[&quot;Venus&quot;,&quot;Bumi&quot;,&quot;Mars&quot;,&quot;Merkurius&quot;],&quot;correctIndex&quot;:3}]"
+  script-function-name="submitQuizResult" _screen="name" _current-index="0"
+  _score="0" _selected-index="-1"></explode-quiz>
