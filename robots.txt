@@ -1,8 +1,8 @@
 User-agent: *
 Crawl-delay: 10
 Allow: /
-Sitemap: https://localhost/sites/pen-todo/sitemap.xml
-LLMS: https://localhost/sites/pen-todo/llms.txt
+Sitemap: https://localhost:3000/sites/pen-todo/sitemap.xml
+LLMS: https://localhost:3000/sites/pen-todo/llms.txt
 # CSS, JS, Images
 Allow: /assets/*.css$
 Allow: /assets/*.css?
