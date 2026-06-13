@@ -1,22 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-lesson-1-intro</id>
-<indent>1</indent>
+<indent>0</indent>
 <location>pages/item-lesson-1-intro/index.xml</location>
 <slug>lesson-1-introduction</slug>
-<order>2</order>
+<order>1</order>
 <parent>item-lesson-1</parent>
 <title>Lesson 1: Introduction</title>
-<description></description>
+<description>Lesson 1 Introduction
+Give learners context for this lesson: why the topic matters, how it connects to
+  prior knowledge, and what questions they should keep in mind as they move through
+  the conten</description>
 <metadata>
 <published>true</published>
 <hideInMenu>false</hideInMenu>
-<tags>
-<item>intro</item>
-<item>context</item>
-</tags>
+<tags>intro,context</tags>
 <created>1781318422</created>
-<updated>1781318422</updated>
+<updated>1781344881</updated>
+<locked>false</locked>
+<readtime>1</readtime>
+<videos>
+</videos>
+<images>
+</images>
 </metadata>
-<content><![CDATA[<h2>Lesson 1 Introduction</h2><p>Give learners context for this lesson: why the topic matters, how it connects to prior knowledge, and what questions they should keep in mind as they move through the content.</p>]]></content>
+<content><![CDATA[
+<h2 id="h2-1685776273">Lesson 1 Introduction</h2>
+<p>Give learners context for this lesson: why the topic matters, how it connects to
+  prior knowledge, and what questions they should keep in mind as they move through
+  the content.</p>
+<p></p>
+<p>tes</p>
+<p>ujian</p>
+<explode-quiz>1</explode-quiz>
+<p></p>
+]]></content>
 </item>

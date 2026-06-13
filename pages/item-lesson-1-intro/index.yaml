@@ -1,20 +1,41 @@
 id: item-lesson-1-intro
-indent: 1
+indent: 0
 location: pages/item-lesson-1-intro/index.yaml
 slug: lesson-1-introduction
-order: 2
+order: 1
 parent: item-lesson-1
 title: 'Lesson 1: Introduction'
-description: ''
+description: >-
+  Lesson 1 Introduction
+
+  Give learners context for this lesson: why the topic matters, how it connects
+  to
+    prior knowledge, and what questions they should keep in mind as they move through
+    the conten
 metadata:
   published: true
   hideInMenu: false
-  tags:
-    - intro
-    - context
+  tags: intro,context
   created: 1781318422
-  updated: 1781318422
-content: >-
-  <h2>Lesson 1 Introduction</h2><p>Give learners context for this lesson: why
-  the topic matters, how it connects to prior knowledge, and what questions they
-  should keep in mind as they move through the content.</p>
+  updated: 1781344881
+  locked: false
+  readtime: 1
+  videos: []
+  images: []
+content: >
+
+  <h2 id="h2-1685776273">Lesson 1 Introduction</h2>
+
+  <p>Give learners context for this lesson: why the topic matters, how it
+  connects to
+    prior knowledge, and what questions they should keep in mind as they move through
+    the content.</p>
+  <p></p>
+
+  <p>tes</p>
+
+  <p>ujian</p>
+
+  <explode-quiz>1</explode-quiz>
+
+  <p></p>

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "explode-quiz.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "name": "ExplodeQuiz",
+          "description": "Interactive multiple-choice quiz with confetti and Google Sheets integration",
+          "tag": "explode-quiz",
+          "haxProperties": {
+            "canScale": true,
+            "canPosition": true,
+            "canEditSource": false,
+            "gizmo": {
+              "title": "Explode Quiz",
+              "description": "Interactive multiple-choice quiz with confetti and Google Sheets integration",
+              "icon": "icons:question-answer",
+              "color": "purple",
+              "tags": ["Education", "Interactive", "Content"]
+            },
+            "settings": {
+              "configure": [
+                {
+                  "property": "questions",
+                  "title": "Daftar Soal",
+                  "description": "Array soal kustom (JSON)",
+                  "inputMethod": "code-editor"
+                },
+                {
+                  "property": "scriptFunctionName",
+                  "title": "Nama Fungsi Apps Script",
+                  "description": "Nama fungsi Google Apps Script untuk menerima hasil kuis",
+                  "inputMethod": "textfield"
+                }
+              ],
+              "advanced": []
+            }
+          },
+          "properties": [
+            {
+              "name": "questions",
+              "type": "Array",
+              "required": false,
+              "description": "Array of quiz questions"
+            },
+            {
+              "name": "scriptFunctionName",
+              "type": "String",
+              "required": false,
+              "description": "Name of the Google Apps Script function"
+            }
+          ],
+          "events": [],
+          "methods": []
+        }
+      ],
+      "exports": []
+    }
+  ]
+}

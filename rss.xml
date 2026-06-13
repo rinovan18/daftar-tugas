@@ -6,7 +6,7 @@
     <description>own course</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/pen-todo</copyright>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jun 2026 06:22:19 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 06:24:12 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/pen-todo/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -30,9 +30,8 @@
     <item>
       <title>Lesson 1: Introduction</title>
       <link>https://localhost:3000/sites/pen-todo/lesson-1-introduction</link>
-      <description>Lesson 1 Introduction Give learners context for this lesson: why the topic matters, how it connects to prior knowledge, and what questions they should keep in mind as they move through the content.</description>
-      <category>intro</category>
-      <category>context</category>
+      <description>Lesson 1 Introduction Give learners context for this lesson: why the topic matters, how it connects to prior knowledge, and what questions they should keep in mind as they move through the content. tes ujian 1</description>
+      <category>intro,context</category>
       <guid>https://localhost:3000/sites/pen-todo/lesson-1-introduction</guid>
       <pubDate>Sat, 13 Jun 2026 02:40:22 GMT</pubDate>
     </item>
