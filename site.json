@@ -15,7 +15,7 @@
         "canonical": true
       },
       "created": 1781318422,
-      "updated": 1781331739,
+      "updated": 1781331852,
       "git": {
         "vendor": "github",
         "branch": "gh-pages"
@@ -144,7 +144,7 @@
         "hideInMenu": false,
         "tags": "conclusion,summary",
         "created": 1781318422,
-        "updated": 1781331739,
+        "updated": 1781331852,
         "locked": false,
         "readtime": 1,
         "videos": [],

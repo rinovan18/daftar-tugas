@@ -3,7 +3,7 @@ Lesson 1 Conclusion
 
 Wrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaways, and pointing learners toward next steps such as reflections, assessments, or the next lesson.
 
-<todo-list tasks="[{&quot;id&quot;:&quot;fc6c381b-701f-43fd-9392-434d35044c9d&quot;,&quot;text&quot;:&quot;12344&quot;,&quot;completed&quot;:false},{&quot;id&quot;:&quot;ec82d6da-110b-42a1-990b-c51516baf458&quot;,&quot;text&quot;:&quot;ssdafdsafds&quot;,&quot;completed&quot;:false},{&quot;id&quot;:&quot;e4e0cbba-5e58-4ed4-a0fc-a92f9e73f5e0&quot;,&quot;text&quot;:&quot;mengantar fina&quot;,&quot;completed&quot;:false}]" id="h2--654010718" data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs">&gt;1</todo-list>
+<todo-list tasks="[{&quot;id&quot;:&quot;fc6c381b-701f-43fd-9392-434d35044c9d&quot;,&quot;text&quot;:&quot;12344&quot;,&quot;completed&quot;:false},{&quot;id&quot;:&quot;ec82d6da-110b-42a1-990b-c51516baf458&quot;,&quot;text&quot;:&quot;ssdafdsafds&quot;,&quot;completed&quot;:false},{&quot;id&quot;:&quot;e4e0cbba-5e58-4ed4-a0fc-a92f9e73f5e0&quot;,&quot;text&quot;:&quot;mengantar fina&quot;,&quot;completed&quot;:false},{&quot;id&quot;:&quot;cc0e1df7-c520-4822-8f3f-7b603f68634a&quot;,&quot;text&quot;:&quot;jemput izza&quot;,&quot;completed&quot;:false}]" id="h2--654010718" data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs">&gt;1</todo-list>
 
 testt
 
