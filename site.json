@@ -15,7 +15,7 @@
         "canonical": true
       },
       "created": 1781318422,
-      "updated": 1781318422,
+      "updated": 1781329105,
       "git": {
         "vendor": "github",
         "branch": "gh-pages"
@@ -131,24 +131,24 @@
     },
     {
       "id": "item-lesson-1-conclusion",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-lesson-1-conclusion/index.html",
       "slug": "lesson-1-conclusion",
-      "order": 4,
+      "order": 2,
       "parent": "item-lesson-1",
       "title": "Lesson 1: Conclusion",
-      "description": "",
+      "description": "Lesson 1 Conclusion\nWrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaways, and pointing learners toward next steps such as reflections, assessments, or the next lesson.\n\n\n",
       "metadata": {
         "published": true,
         "hideInMenu": false,
-        "tags": [
-          "conclusion",
-          "summary"
-        ],
+        "tags": "conclusion,summary",
         "created": 1781318422,
-        "updated": 1781318422
+        "updated": 1781329105,
+        "locked": false,
+        "readtime": 1,
+        "videos": [],
+        "images": []
       }
     }
-  ],
-  "location": "/_sites/pen-todo/index.html"
+  ]
 }

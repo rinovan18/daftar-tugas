@@ -1,23 +1,25 @@
 # pen-todo
 
+> own course
+
 HAXcms is a file-based CMS: authored pages and metadata are stored as portable files, not locked into a database-only workflow.
 The canonical site structure is `site.json`, represented in JSON Outline Schema (`id`, `parent`, `order`, `slug`, `location`, and `metadata`).
 Use HAX CLI and ecosystem tooling to maintain human-authored content while keeping machine-readable outputs synchronized.
 Managed files (feeds, search indexes, manifests, and this `llms.txt`) are generated artifacts and should be rebuilt by tooling.
 
 ## Core resources
-- [site.json](https://localhost/sites/pen-todo/site.json): Canonical site manifest and navigation tree in JSON Outline Schema format.
-- [llms.txt](https://localhost/sites/pen-todo/llms.txt): LLM-oriented guide to this site and its machine-readable resources.
+- [site.json](https://localhost:3000/sites/pen-todo/site.json): Canonical site manifest and navigation tree in JSON Outline Schema format.
+- [llms.txt](https://localhost:3000/sites/pen-todo/llms.txt): LLM-oriented guide to this site and its machine-readable resources.
 
 ## Pages
-- [Syllabus](https://localhost/sites/pen-todo/pages/item-course-syllabus/index.md)
-- [Lesson 1](https://localhost/sites/pen-todo/pages/item-lesson-1/index.md)
-- [Lesson 1: Introduction](https://localhost/sites/pen-todo/pages/item-lesson-1-intro/index.md)
-- [Lesson 1: Content](https://localhost/sites/pen-todo/pages/item-lesson-1-content/index.md)
-- [Lesson 1: Conclusion](https://localhost/sites/pen-todo/pages/item-lesson-1-conclusion/index.md)
+- [Syllabus](https://localhost:3000/sites/pen-todo/pages/item-course-syllabus/index.md)
+- [Lesson 1](https://localhost:3000/sites/pen-todo/pages/item-lesson-1/index.md)
+- [Lesson 1: Introduction](https://localhost:3000/sites/pen-todo/pages/item-lesson-1-intro/index.md)
+- [Lesson 1: Content](https://localhost:3000/sites/pen-todo/pages/item-lesson-1-content/index.md)
+- [Lesson 1: Conclusion](https://localhost:3000/sites/pen-todo/pages/item-lesson-1-conclusion/index.md): Lesson 1 Conclusion Wrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaways, and pointing learners toward next steps such as reflections, assessments, or the next lesson.
 
 ## Optional
-- [Search index](https://localhost/sites/pen-todo/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
-- [RSS feed](https://localhost/sites/pen-todo/rss.xml): Site updates in RSS format.
-- [Atom feed](https://localhost/sites/pen-todo/atom.xml): Site updates in Atom format.
-- [Sitemap](https://localhost/sites/pen-todo/sitemap.xml): URL-level discovery map for the published site.
+- [Search index](https://localhost:3000/sites/pen-todo/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.
+- [RSS feed](https://localhost:3000/sites/pen-todo/rss.xml): Site updates in RSS format.
+- [Atom feed](https://localhost:3000/sites/pen-todo/atom.xml): Site updates in Atom format.
+- [Sitemap](https://localhost:3000/sites/pen-todo/sitemap.xml): URL-level discovery map for the published site.
