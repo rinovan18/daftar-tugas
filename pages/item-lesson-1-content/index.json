@@ -1,21 +1,22 @@
 {
   "id": "item-lesson-1-content",
-  "indent": 1,
+  "indent": 0,
   "location": "pages/item-lesson-1-content/index.json",
   "slug": "lesson-1-content",
-  "order": 3,
+  "order": 2,
   "parent": "item-lesson-1",
   "title": "Lesson 1: Content",
-  "description": "",
+  "description": "Lesson 1 Content\nOrganize the main instructional materials for Lesson 1 here. Combine text, media,\n  and interactive elements to guide learners through concepts, examples, and practice\n  opportunitie",
   "metadata": {
     "published": true,
     "hideInMenu": false,
-    "tags": [
-      "content",
-      "instruction"
-    ],
+    "tags": "content,instruction",
     "created": 1781318422,
-    "updated": 1781318422
+    "updated": 1781329152,
+    "locked": false,
+    "readtime": 1,
+    "videos": [],
+    "images": []
   },
-  "content": "<h2>Lesson 1 Content</h2><p>Organize the main instructional materials for Lesson 1 here. Combine text, media, and interactive elements to guide learners through concepts, examples, and practice opportunities.</p>"
+  "content": "\n<h2 id=\"h2--654010718\">Lesson 1 Content</h2>\n<p>Organize the main instructional materials for Lesson 1 here. Combine text, media,\n  and interactive elements to guide learners through concepts, examples, and practice\n  opportunities.</p>\n<p></p>\n<p>nambah &#60;todo&#62;</p>\n<p></p>\n<todo-list>1</todo-list>\n"
 }

@@ -6,7 +6,7 @@
     <description>own course</description>
     <copyright>Copyright (C) 2026 https://localhost:3000/sites/pen-todo</copyright>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jun 2026 02:40:22 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 05:38:25 GMT</lastBuildDate>
     <generator>HAXcms NodeJS</generator>
     <atom:link href="https://localhost:3000/sites/pen-todo/rss.xml" rel="self" type="application/rss+xml"/>
     <item>
@@ -39,9 +39,8 @@
     <item>
       <title>Lesson 1: Content</title>
       <link>https://localhost:3000/sites/pen-todo/lesson-1-content</link>
-      <description>Lesson 1 Content Organize the main instructional materials for Lesson 1 here. Combine text, media, and interactive elements to guide learners through concepts, examples, and practice opportunities.</description>
-      <category>content</category>
-      <category>instruction</category>
+      <description>Lesson 1 Content Organize the main instructional materials for Lesson 1 here. Combine text, media, and interactive elements to guide learners through concepts, examples, and practice opportunities. nambah &amp;#60;todo&amp;#62; 1</description>
+      <category>content,instruction</category>
       <guid>https://localhost:3000/sites/pen-todo/lesson-1-content</guid>
       <pubDate>Sat, 13 Jun 2026 02:40:22 GMT</pubDate>
     </item>

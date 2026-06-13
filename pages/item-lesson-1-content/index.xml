@@ -1,22 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
 <id>item-lesson-1-content</id>
-<indent>1</indent>
+<indent>0</indent>
 <location>pages/item-lesson-1-content/index.xml</location>
 <slug>lesson-1-content</slug>
-<order>3</order>
+<order>2</order>
 <parent>item-lesson-1</parent>
 <title>Lesson 1: Content</title>
-<description></description>
+<description>Lesson 1 Content
+Organize the main instructional materials for Lesson 1 here. Combine text, media,
+  and interactive elements to guide learners through concepts, examples, and practice
+  opportunitie</description>
 <metadata>
 <published>true</published>
 <hideInMenu>false</hideInMenu>
-<tags>
-<item>content</item>
-<item>instruction</item>
-</tags>
+<tags>content,instruction</tags>
 <created>1781318422</created>
-<updated>1781318422</updated>
+<updated>1781329152</updated>
+<locked>false</locked>
+<readtime>1</readtime>
+<videos>
+</videos>
+<images>
+</images>
 </metadata>
-<content><![CDATA[<h2>Lesson 1 Content</h2><p>Organize the main instructional materials for Lesson 1 here. Combine text, media, and interactive elements to guide learners through concepts, examples, and practice opportunities.</p>]]></content>
+<content><![CDATA[
+<h2 id="h2--654010718">Lesson 1 Content</h2>
+<p>Organize the main instructional materials for Lesson 1 here. Combine text, media,
+  and interactive elements to guide learners through concepts, examples, and practice
+  opportunities.</p>
+<p></p>
+<p>nambah &#60;todo&#62;</p>
+<p></p>
+<todo-list>1</todo-list>
+]]></content>
 </item>
