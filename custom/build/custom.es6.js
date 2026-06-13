@@ -16128,6 +16128,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       _tempChoice2: { state: true },
       _tempChoice3: { state: true },
       _tempCorrectIndex: { state: true },
+      _editorOrigin: { state: true },
     };
   }
 
@@ -16154,8 +16155,8 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
     this._tempChoice2 = "";
     this._tempChoice3 = "";
     this._tempCorrectIndex = "0";
+    this._editorOrigin = "result";
     this.t = {
-      // Layar_Nama
       quizTitle: "Kuis Interaktif",
       quizInstruction: "Masukkan nama Anda untuk memulai kuis.",
       namePlaceholder: "Nama Anda...",
@@ -16299,6 +16300,13 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       ${this._validationError
         ? b`<p class="validation-error">${this._validationError}</p>`
         : ""}
+      <button
+        class="edit-questions-btn"
+        @click="${this._openEditorFromName}"
+        aria-label="${this.t.ariaCloseEditor}"
+      >
+        ${this.t.editTitle}
+      </button>
     `;
   }
 
@@ -16429,6 +16437,13 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       >
         ${this.t.restartButton}
       </button>
+      <button
+        class="edit-questions-btn"
+        @click="${this._openEditor}"
+        aria-label="${this.t.ariaCloseEditor}"
+      >
+        ${this.t.editTitle}
+      </button>
     `;
   }
 
@@ -16452,6 +16467,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
     this._tempChoice2 = "";
     this._tempChoice3 = "";
     this._tempCorrectIndex = "0";
+    this._editorOrigin = "result";
   }
 
   _submitToSheets(name, score) {
@@ -16490,6 +16506,18 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
     this._editingIndex = -1;
     // Deep copy questions to tempQuestions
     this._tempQuestions = JSON.parse(JSON.stringify(this.questions));
+    this._screen = "editor";
+  }
+
+  _openEditorFromName() {
+    if (this._screen !== "name") return;
+    if (this._editing) return;
+
+    this._editing = true;
+    this._editingIndex = -1;
+    this._tempQuestions = JSON.parse(JSON.stringify(this.questions));
+    // Remember we came from name screen so save/cancel go back there
+    this._editorOrigin = "name";
     this._screen = "editor";
   }
 
@@ -16707,7 +16735,8 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       correctIndex: parseInt(this._tempCorrectIndex, 10),
     };
 
-    this._tempQuestions.push(newQuestion);
+    // Reassign so Lit detects the change and re-renders
+    this._tempQuestions = [...this._tempQuestions, newQuestion];
     this._tempQuestionText = "";
     this._tempChoice0 = "";
     this._tempChoice1 = "";
@@ -16723,9 +16752,19 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
       return;
     }
 
-    this._tempQuestions.splice(index, 1);
+    // Reassign so Lit detects the change and re-renders
+    this._tempQuestions = this._tempQuestions.filter((_, i) => i !== index);
     if (this._editingIndex === index) {
       this._editingIndex = -1;
+      this._tempQuestionText = "";
+      this._tempChoice0 = "";
+      this._tempChoice1 = "";
+      this._tempChoice2 = "";
+      this._tempChoice3 = "";
+      this._tempCorrectIndex = "0";
+    } else if (this._editingIndex > index) {
+      // Shift editing index down if item above it was removed
+      this._editingIndex = this._editingIndex - 1;
     }
   }
 
@@ -16762,16 +16801,21 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
     )
       return;
 
-    this._tempQuestions[this._editingIndex] = {
-      question: this._tempQuestionText.trim(),
-      choices: [
-        this._tempChoice0.trim(),
-        this._tempChoice1.trim(),
-        this._tempChoice2.trim(),
-        this._tempChoice3.trim(),
-      ],
-      correctIndex: parseInt(this._tempCorrectIndex, 10),
-    };
+    // Reassign so Lit detects the change and re-renders
+    this._tempQuestions = this._tempQuestions.map((q, i) =>
+      i === this._editingIndex
+        ? {
+            question: this._tempQuestionText.trim(),
+            choices: [
+              this._tempChoice0.trim(),
+              this._tempChoice1.trim(),
+              this._tempChoice2.trim(),
+              this._tempChoice3.trim(),
+            ],
+            correctIndex: parseInt(this._tempCorrectIndex, 10),
+          }
+        : q,
+    );
 
     this._editingIndex = -1;
     this._tempQuestionText = "";
@@ -16802,7 +16846,8 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
     this.questions = JSON.parse(JSON.stringify(this._tempQuestions));
     this._editing = false;
     this._editingIndex = -1;
-    this._screen = "result";
+    this._screen = this._editorOrigin || "result";
+    this._editorOrigin = "result";
   }
 
   _cancelAll() {
@@ -16811,7 +16856,8 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
 
     this._editing = false;
     this._editingIndex = -1;
-    this._screen = "result";
+    this._screen = this._editorOrigin || "result";
+    this._editorOrigin = "result";
   }
 
   render() {
@@ -17040,6 +17086,30 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
         }
 
         .restart-btn:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 3px
+            var(--ddd-theme-polaris-focus-ring, var(--ddd-theme-link-light));
+        }
+
+        .edit-questions-btn {
+          width: 100%;
+          margin-top: var(--ddd-spacing-3);
+          padding: var(--ddd-spacing-3) var(--ddd-spacing-4);
+          font-size: var(--ddd-font-size-s);
+          font-weight: var(--ddd-font-weight-medium);
+          background: transparent;
+          color: var(--ddd-theme-primary);
+          border: 1px solid var(--ddd-theme-polaris-border);
+          border-radius: var(--ddd-radius-md);
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+
+        .edit-questions-btn:hover {
+          background: var(--ddd-theme-polaris-surface-hover);
+        }
+
+        .edit-questions-btn:focus-visible {
           outline: none;
           box-shadow: 0 0 0 3px
             var(--ddd-theme-polaris-focus-ring, var(--ddd-theme-link-light));
