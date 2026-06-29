@@ -15,7 +15,7 @@
         "canonical": true
       },
       "created": 1781318422,
-      "updated": 1782751500,
+      "updated": 1782751529,
       "git": {
         "vendor": "github",
         "branch": "gh-pages"
@@ -149,7 +149,7 @@
       "indent": 0,
       "location": "pages/item-lesson-1-conclusion/index.html",
       "slug": "lesson-1-conclusion",
-      "order": 2,
+      "order": 3,
       "parent": "item-lesson-1",
       "title": "Lesson 1: Conclusion",
       "description": "Lesson 1 Conclusion\nWrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaways, and pointing learners toward next steps such as reflections, assessments, or the next lesson.\n\n\n",
@@ -158,7 +158,7 @@
         "hideInMenu": false,
         "tags": "conclusion,summary",
         "created": 1781318422,
-        "updated": 1781331852,
+        "updated": 1782751529,
         "locked": false,
         "readtime": 1,
         "videos": [],

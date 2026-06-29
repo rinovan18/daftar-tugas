@@ -2,7 +2,7 @@ id: item-lesson-1-conclusion
 indent: 0
 location: pages/item-lesson-1-conclusion/index.yaml
 slug: lesson-1-conclusion
-order: 2
+order: 3
 parent: item-lesson-1
 title: 'Lesson 1: Conclusion'
 description: >+
@@ -18,7 +18,7 @@ metadata:
   hideInMenu: false
   tags: conclusion,summary
   created: 1781318422
-  updated: 1781331852
+  updated: 1782751529
   locked: false
   readtime: 1
   videos: []
@@ -45,7 +45,7 @@ content: >
   <todo-list id="h2--654010718" data-font-family="primary" data-font-size="l"
   data-margin="s" data-accent="13" data-primary="15"
   tasks="[{&quot;id&quot;:&quot;fc6c381b-701f-43fd-9392-434d35044c9d&quot;,&quot;text&quot;:&quot;12344&quot;,&quot;completed&quot;:false},{&quot;id&quot;:&quot;ec82d6da-110b-42a1-990b-c51516baf458&quot;,&quot;text&quot;:&quot;ssdafdsafds&quot;,&quot;completed&quot;:false},{&quot;id&quot;:&quot;e4e0cbba-5e58-4ed4-a0fc-a92f9e73f5e0&quot;,&quot;text&quot;:&quot;mengantar
-  fina&quot;,&quot;completed&quot;:false}]">&#62;1</todo-list>
+  fina&quot;,&quot;completed&quot;:false},{&quot;id&quot;:&quot;08eb6313-5109-461c-9023-7e7077e1d049&quot;,&quot;text&quot;:&quot;ssss&quot;,&quot;completed&quot;:false}]">&#62;1</todo-list>
 
   <p></p>
 
