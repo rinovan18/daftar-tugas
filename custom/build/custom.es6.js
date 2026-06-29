@@ -16263,6 +16263,15 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
     }
   }
 
+  /** Only true inside HAX editor (hax start / haxcms local dev) */
+  get _inHaxEditor() {
+    return !!(
+      globalThis.HaxStore &&
+      typeof globalThis.HaxStore.requestAvailability === "function" &&
+      globalThis.HaxStore.requestAvailability().editMode
+    );
+  }
+
   _fireConfetti() {
     if (typeof this._confettiFn !== "function") return;
     try {
@@ -16382,6 +16391,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
         class="edit-questions-btn"
         @click="${this._openEditorFromName}"
         aria-label="${this.t.ariaCloseEditor}"
+        ?hidden="${!this._inHaxEditor}"
       >
         ${this.t.editTitle}
       </button>
@@ -16521,6 +16531,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
         class="edit-questions-btn"
         @click="${this._openEditor}"
         aria-label="${this.t.ariaCloseEditor}"
+        ?hidden="${!this._inHaxEditor}"
       >
         ${this.t.editTitle}
       </button>
