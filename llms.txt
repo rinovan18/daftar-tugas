@@ -18,7 +18,7 @@ Managed files (feeds, search indexes, manifests, and this `llms.txt`) are genera
 - [Lesson 1: Content](https://localhost:3000/sites/pen-todo/pages/item-lesson-1-content/index.md): Lesson 1 Content Organize the main instructional materials for Lesson 1 here. Combine text, media, and interactive elements to guide learners through concepts, examples, and practice opportunitie
 - [New Page](https://localhost:3000/sites/pen-todo/pages/item-88892e53-0178-4d1a-9d05-793ec6d783bb/index.md)
 - [Lesson 1: Conclusion](https://localhost:3000/sites/pen-todo/pages/item-lesson-1-conclusion/index.md): Lesson 1 Conclusion Wrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaways, and pointing learners toward next steps such as reflections, assessments, or the next lesson.
-- [New Page](https://localhost:3000/sites/pen-todo/pages/item-53184bd3-b1bd-4b95-a01a-b460db2b8add/index.md)
+- [Halaman Tes](https://localhost:3000/sites/pen-todo/pages/item-53184bd3-b1bd-4b95-a01a-b460db2b8add/index.md): dsafdsa tess
 
 ## Optional
 - [Search index](https://localhost:3000/sites/pen-todo/lunrSearchIndex.json): Lunr corpus for quick full-text retrieval.

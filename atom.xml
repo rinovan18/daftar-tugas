@@ -132,15 +132,34 @@ Wrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaway
     </content>
   </entry>
   <entry>
-    <title>New Page</title>
+    <title>Halaman Tes</title>
     <id>item-53184bd3-b1bd-4b95-a01a-b460db2b8add</id>
-    <updated>2026-06-30T03:31:41.000Z</updated>
+    <updated>2026-06-30T03:32:07.000Z</updated>
     <published>2026-06-30T03:30:30.000Z</published>
-    <summary></summary>
+    <summary>dsafdsa
+
+
+
+
+tess
+
+
+
+</summary>
     <link href="https://localhost:3000/sites/pen-todo/new-page-1"/>
     
     <content type="html">
-      <![CDATA[ <p></p> ]]>
+      <![CDATA[ 
+<p>dsafdsa</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p>tess</p>
+<p></p>
+<p></p>
+<p></p>
+ ]]>
     </content>
   </entry>
 </feed>

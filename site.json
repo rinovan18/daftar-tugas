@@ -15,7 +15,7 @@
         "canonical": true
       },
       "created": 1781318422,
-      "updated": 1782790301,
+      "updated": 1782790327,
       "git": {
         "vendor": "github",
         "branch": "gh-pages"
@@ -192,21 +192,23 @@
     },
     {
       "id": "item-53184bd3-b1bd-4b95-a01a-b460db2b8add",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-53184bd3-b1bd-4b95-a01a-b460db2b8add/index.html",
       "slug": "new-page-1",
       "order": 3,
       "parent": "item-lesson-1",
-      "title": "New Page",
-      "description": "",
+      "title": "Halaman Tes",
+      "description": "dsafdsa\n\n\n\n\ntess\n\n\n\n",
       "metadata": {
         "created": 1782790230,
-        "updated": 1782790301,
+        "updated": 1782790327,
         "images": [],
         "videos": [],
         "published": true,
         "locked": false,
-        "status": ""
+        "status": "",
+        "hideInMenu": false,
+        "readtime": 1
       }
     }
   ]

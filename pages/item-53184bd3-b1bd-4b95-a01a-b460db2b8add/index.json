@@ -3,15 +3,20 @@
   "indent": 0,
   "location": "pages/item-53184bd3-b1bd-4b95-a01a-b460db2b8add/index.json",
   "slug": "new-page-1",
-  "order": 1,
+  "order": 3,
   "parent": "item-lesson-1",
-  "title": "New Page",
-  "description": "",
+  "title": "Halaman Tes",
+  "description": "dsafdsa\n\n\n\n\ntess\n\n\n\n",
   "metadata": {
     "created": 1782790230,
-    "updated": 1782790230,
+    "updated": 1782790327,
     "images": [],
-    "videos": []
+    "videos": [],
+    "published": true,
+    "locked": false,
+    "status": "",
+    "hideInMenu": false,
+    "readtime": 1
   },
-  "content": "<p></p>"
+  "content": "\n<p>dsafdsa</p>\n<p></p>\n<p></p>\n<p></p>\n<p></p>\n<p>tess</p>\n<p></p>\n<p></p>\n<p></p>\n"
 }
