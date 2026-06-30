@@ -16138,15 +16138,36 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
         reflect: true,
         converter: {
           fromAttribute(value) {
-            if (!value) return undefined;
+            if (value == null || value === "") return undefined;
+            if (Array.isArray(value)) return value;
+            if (typeof value === "object") return value;
+
+            const text = String(value).trim();
+            if (
+              !text ||
+              text === "[object Object]" ||
+              text === "undefined" ||
+              text === "null"
+            ) {
+              return undefined;
+            }
+
+            if (!(text.startsWith("[") || text.startsWith("{"))) {
+              return undefined;
+            }
+
             try {
-              const parsed = JSON.parse(value);
-              return Array.isArray(parsed) ? parsed : undefined;
-            } catch (e) {
-              console.warn(
-                "[explode-quiz] Gagal parse atribut questions, pakai fallback default:",
-                e,
-              );
+              const parsed = JSON.parse(text);
+              if (Array.isArray(parsed)) return parsed;
+              if (
+                parsed &&
+                typeof parsed === "object" &&
+                Array.isArray(parsed.questions)
+              ) {
+                return parsed.questions;
+              }
+              return undefined;
+            } catch (_) {
               return undefined;
             }
           },
@@ -16286,10 +16307,35 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
     };
   }
 
+  _isValidQuestionItem(item) {
+    return !!(
+      item &&
+      typeof item === "object" &&
+      typeof item.question === "string" &&
+      Array.isArray(item.choices) &&
+      item.choices.length >= 2 &&
+      Number.isInteger(item.correctIndex) &&
+      item.correctIndex >= 0 &&
+      item.correctIndex < item.choices.length
+    );
+  }
+
+  _normalizeQuestions(value) {
+    if (!Array.isArray(value)) return DEFAULT_QUESTIONS;
+    const normalized = value.filter((item) => this._isValidQuestionItem(item));
+    return normalized.length > 0 ? normalized : DEFAULT_QUESTIONS;
+  }
+
   updated(changedProperties) {
     super.updated(changedProperties);
-    if (this.questions && this.questions.length === 0) {
-      this.questions = DEFAULT_QUESTIONS;
+    if (changedProperties.has("questions")) {
+      const normalized = this._normalizeQuestions(this.questions);
+      if (normalized !== this.questions) {
+        this.questions = normalized;
+      }
+      if (this._currentIndex >= this.questions.length) {
+        this._currentIndex = 0;
+      }
     }
   }
 

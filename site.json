@@ -75,7 +75,7 @@
         "hideInMenu": false,
         "tags": "syllabus,overview",
         "created": 1781318422,
-        "updated": 1782790300,
+        "updated": 1782793692,
         "locked": false,
         "readtime": 1,
         "videos": [],
@@ -100,30 +100,8 @@
           "overview"
         ],
         "created": 1781318422,
-        "updated": 1782790300,
+        "updated": 1782793692,
         "locked": false,
-        "status": ""
-      }
-    },
-    {
-      "id": "item-lesson-1-intro",
-      "indent": 0,
-      "location": "pages/item-lesson-1-intro/index.html",
-      "slug": "lesson-1-introduction",
-      "order": 0,
-      "parent": "item-lesson-1",
-      "title": "Lesson 1: Introduction",
-      "description": "Lesson 1 Introduction Give learners context for this lesson: why the topic matters, how it connects to   prior knowledge, and what questions they should keep in mind as they move through   the conten",
-      "metadata": {
-        "published": true,
-        "hideInMenu": false,
-        "tags": "intro,context",
-        "created": 1781318422,
-        "updated": 1782792723,
-        "locked": false,
-        "readtime": 1,
-        "videos": [],
-        "images": [],
         "status": ""
       }
     },
@@ -141,7 +119,7 @@
         "hideInMenu": false,
         "tags": "content,instruction",
         "created": 1781318422,
-        "updated": 1782790300,
+        "updated": 1782793692,
         "locked": false,
         "readtime": 1,
         "videos": [],
@@ -160,7 +138,7 @@
       "description": "",
       "metadata": {
         "created": 1781372376,
-        "updated": 1782790300,
+        "updated": 1782793692,
         "images": [],
         "videos": [],
         "published": true,
@@ -182,7 +160,7 @@
         "hideInMenu": false,
         "tags": "conclusion,summary",
         "created": 1781318422,
-        "updated": 1782790300,
+        "updated": 1782793692,
         "locked": false,
         "readtime": 1,
         "videos": [],
@@ -192,7 +170,7 @@
     },
     {
       "id": "item-53184bd3-b1bd-4b95-a01a-b460db2b8add",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-53184bd3-b1bd-4b95-a01a-b460db2b8add/index.html",
       "slug": "new-page-1",
       "order": 3,
@@ -201,7 +179,7 @@
       "description": "dsafdsa\n\n\n\n\ntess\n\n\n\n",
       "metadata": {
         "created": 1782790230,
-        "updated": 1782790327,
+        "updated": 1782793692,
         "images": [],
         "videos": [],
         "published": true,
