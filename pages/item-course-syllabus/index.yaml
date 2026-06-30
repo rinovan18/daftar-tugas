@@ -16,11 +16,12 @@ metadata:
   hideInMenu: false
   tags: syllabus,overview
   created: 1781318422
-  updated: 1782751421
+  updated: 1782794478
   locked: false
   readtime: 1
   videos: []
   images: []
+  status: ''
 content: >
 
   <h2 id="h2-471275594">Course Syllabus</h2>
@@ -28,5 +29,7 @@ content: >
   <p>Outline the course description, learning objectives, required materials,
   grading breakdown, and major deadlines. Keep this page focused on the big
   picture of what learners will accomplish.</p>
+
+  <p>fdfdfd</p>
 
   <p>haloooo</p>

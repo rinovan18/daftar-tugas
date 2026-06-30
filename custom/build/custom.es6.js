@@ -16087,7 +16087,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
             property: "questions",
             title: "Daftar Soal",
             description: "Array soal kustom (JSON)",
-            inputMethod: "code-editor",
+            inputMethod: "textarea",
           },
           {
             property: "scriptFunctionName",
