@@ -15,7 +15,7 @@
         "canonical": true
       },
       "created": 1781318422,
-      "updated": 1782790327,
+      "updated": 1782790829,
       "git": {
         "vendor": "github",
         "branch": "gh-pages"
@@ -107,7 +107,7 @@
     },
     {
       "id": "item-lesson-1-intro",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-lesson-1-intro/index.html",
       "slug": "lesson-1-introduction",
       "order": 0,
@@ -119,7 +119,7 @@
         "hideInMenu": false,
         "tags": "intro,context",
         "created": 1781318422,
-        "updated": 1782790300,
+        "updated": 1782790829,
         "locked": false,
         "readtime": 1,
         "videos": [],

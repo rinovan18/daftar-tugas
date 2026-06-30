@@ -16099,13 +16099,70 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
         ],
         advanced: [],
       },
+      saveOptions: {
+        unsetAttributes: [
+          "_screen",
+          "_studentName",
+          "_currentIndex",
+          "_score",
+          "_answered",
+          "_selectedIndex",
+          "_feedbackText",
+          "_feedbackPositive",
+          "_validationError",
+          "_nameInputValue",
+          "_editing",
+          "_tempQuestions",
+          "_editingIndex",
+          "_tempQuestionText",
+          "_tempChoice0",
+          "_tempChoice1",
+          "_tempChoice2",
+          "_tempChoice3",
+          "_tempCorrectIndex",
+          "_editorOrigin",
+          "editing",
+          "editable",
+        ],
+      },
     };
   }
 
   static get properties() {
     return {
       ...super.properties,
-      questions: { type: Array, attribute: true },
+      questions: {
+        type: Array,
+        attribute: "questions",
+        reflect: true,
+        converter: {
+          fromAttribute(value) {
+            if (!value) return undefined;
+            try {
+              const parsed = JSON.parse(value);
+              return Array.isArray(parsed) ? parsed : undefined;
+            } catch (e) {
+              console.warn(
+                "[explode-quiz] Gagal parse atribut questions, pakai fallback default:",
+                e,
+              );
+              return undefined;
+            }
+          },
+          toAttribute(value) {
+            if (!Array.isArray(value)) return null;
+            try {
+              return JSON.stringify(value);
+            } catch (e) {
+              console.warn(
+                "[explode-quiz] Gagal serialize questions ke atribut:",
+                e,
+              );
+              return null;
+            }
+          },
+        },
+      },
       scriptFunctionName: { type: String, attribute: true },
       editable: { type: Boolean, attribute: true, reflect: true },
       editing: { type: Boolean, attribute: true, reflect: true },

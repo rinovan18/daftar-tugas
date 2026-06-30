@@ -14,11 +14,12 @@ metadata:
   hideInMenu: false
   tags: intro,context
   created: 1781318422
-  updated: 1781376521
+  updated: 1782790829
   locked: false
   readtime: 1
   videos: []
   images: []
+  status: ''
 content: >
 
   <h2 id="h2-1685776273">Lesson 1 Introduction</h2>
@@ -35,20 +36,20 @@ content: >
   hasil dari 7 ×
   8?&quot;,&quot;choices&quot;:[&quot;54&quot;,&quot;56&quot;,&quot;58&quot;,&quot;60&quot;],&quot;correctIndex&quot;:1},{&quot;question&quot;:&quot;Planet
   terdekat dengan Matahari
-  adalah?&quot;,&quot;choices&quot;:[&quot;Venus&quot;,&quot;Bumi&quot;,&quot;Mars&quot;,&quot;Merkurius&quot;],&quot;correctIndex&quot;:3},{&quot;question&quot;:&quot;123&quot;,&quot;choices&quot;:[&quot;12&quot;,&quot;33&quot;,&quot;22&quot;,&quot;44&quot;],&quot;correctIndex&quot;:0}]"
-  script-function-name="submitQuizResult" _screen="name" _student-name="sfdsaf"
-  _current-index="0" _score="0" _selected-index="-1" _name-input-value="sfdsaf"
+  adalah?&quot;,&quot;choices&quot;:[&quot;Venus&quot;,&quot;Bumi&quot;,&quot;Mars&quot;,&quot;Merkurius&quot;],&quot;correctIndex&quot;:3},{&quot;question&quot;:&quot;1234333&quot;,&quot;choices&quot;:[&quot;12&quot;,&quot;33&quot;,&quot;22&quot;,&quot;44&quot;],&quot;correctIndex&quot;:0}]"
+  script-function-name="submitQuizResult" _student-name="sfdsaf"
+  _current-index="0" _selected-index="-1" _name-input-value="sfdsaf"
   _temp-questions="[{&quot;question&quot;:&quot;Apa ibu kota
   Indonesia?&quot;,&quot;choices&quot;:[&quot;Bandung&quot;,&quot;Surabaya&quot;,&quot;Jakarta&quot;,&quot;Medan&quot;],&quot;correctIndex&quot;:2},{&quot;question&quot;:&quot;Berapa
   hasil dari 7 ×
   8?&quot;,&quot;choices&quot;:[&quot;54&quot;,&quot;56&quot;,&quot;58&quot;,&quot;60&quot;],&quot;correctIndex&quot;:1},{&quot;question&quot;:&quot;Planet
   terdekat dengan Matahari
-  adalah?&quot;,&quot;choices&quot;:[&quot;Venus&quot;,&quot;Bumi&quot;,&quot;Mars&quot;,&quot;Merkurius&quot;],&quot;correctIndex&quot;:3},{&quot;question&quot;:&quot;123&quot;,&quot;choices&quot;:[&quot;12&quot;,&quot;33&quot;,&quot;22&quot;,&quot;44&quot;],&quot;correctIndex&quot;:0}]"
+  adalah?&quot;,&quot;choices&quot;:[&quot;Venus&quot;,&quot;Bumi&quot;,&quot;Mars&quot;,&quot;Merkurius&quot;],&quot;correctIndex&quot;:3},{&quot;question&quot;:&quot;1234333&quot;,&quot;choices&quot;:[&quot;12&quot;,&quot;33&quot;,&quot;22&quot;,&quot;44&quot;],&quot;correctIndex&quot;:0}]"
   _editing-index="-1" _temp-correct-index="0" _temp-question-text="sfsdf"
   _temp-choice0="111" _temp-choice1="222" _temp-choice2="33" _temp-choice3="44"
   _editor-origin="result" data-style-guide="data-style-guide" data-accent="7"
   data-primary="21" data-margin="l" data-padding="xl" _validation-error="Nama
-  tidak boleh kosong." _answered="" _feedback-text="Yah, Salah. Jawaban benar:
+  tidak boleh kosong." _feedback-text="Yah, Salah. Jawaban benar:
   Merkurius"></explode-quiz>
 
   <p>Deep thoughts..</p>
