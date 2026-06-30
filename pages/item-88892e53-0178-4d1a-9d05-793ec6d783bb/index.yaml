@@ -5,10 +5,41 @@ slug: new-page
 order: 1
 parent: item-lesson-1
 title: New Page
-description: ''
+description: |+
+
+  llklk
+
+
+  Link to content
+
+
+
 metadata:
   created: 1781372376
-  updated: 1781372376
+  updated: 1782794625
   images: []
   videos: []
-content: <p></p>
+  published: true
+  locked: false
+  status: ''
+  hideInMenu: false
+  readtime: 1
+content: >
+
+  <p></p>
+
+  <h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8"
+  data-padding="xs" data-border-radius="xs">llklk</h2>
+
+  <p></p>
+
+  <place-holder type="image" accent-color="grey" directions="Drag and drop file
+  to replace"></place-holder>
+
+  <p><a href="#">Link to content</a></p>
+
+  <p></p>
+
+  <p></p>
+
+  <p><a href="#"></a></p>

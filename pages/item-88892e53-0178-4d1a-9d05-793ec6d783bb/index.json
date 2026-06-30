@@ -6,12 +6,17 @@
   "order": 1,
   "parent": "item-lesson-1",
   "title": "New Page",
-  "description": "",
+  "description": "\nllklk\n\n\nLink to content\n\n\n\n",
   "metadata": {
     "created": 1781372376,
-    "updated": 1781372376,
+    "updated": 1782794625,
     "images": [],
-    "videos": []
+    "videos": [],
+    "published": true,
+    "locked": false,
+    "status": "",
+    "hideInMenu": false,
+    "readtime": 1
   },
-  "content": "<p></p>"
+  "content": "\n<p></p>\n<h2 data-style-guide=\"headline\" data-design-treatment=\"vert\" data-primary=\"8\" data-padding=\"xs\" data-border-radius=\"xs\">llklk</h2>\n<p></p>\n<place-holder type=\"image\" accent-color=\"grey\" directions=\"Drag and drop file to replace\"></place-holder>\n<p><a href=\"#\">Link to content</a></p>\n<p></p>\n<p></p>\n<p><a href=\"#\"></a></p>\n"
 }

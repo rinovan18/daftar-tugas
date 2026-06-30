@@ -15,7 +15,7 @@
         "canonical": true
       },
       "created": 1781318422,
-      "updated": 1782794492,
+      "updated": 1782794625,
       "git": {
         "vendor": "github",
         "branch": "gh-pages"
@@ -129,21 +129,23 @@
     },
     {
       "id": "item-88892e53-0178-4d1a-9d05-793ec6d783bb",
-      "indent": 1,
+      "indent": 0,
       "location": "pages/item-88892e53-0178-4d1a-9d05-793ec6d783bb/index.html",
       "slug": "new-page",
-      "order": 2,
+      "order": 1,
       "parent": "item-lesson-1",
       "title": "New Page",
-      "description": "",
+      "description": "\nllklk\n\n\nLink to content\n\n\n\n",
       "metadata": {
         "created": 1781372376,
-        "updated": 1782793692,
+        "updated": 1782794625,
         "images": [],
         "videos": [],
         "published": true,
         "locked": false,
-        "status": ""
+        "status": "",
+        "hideInMenu": false,
+        "readtime": 1
       }
     },
     {

@@ -7,14 +7,36 @@
 <order>1</order>
 <parent>item-lesson-1</parent>
 <title>New Page</title>
-<description></description>
+<description>
+llklk
+
+
+Link to content
+
+
+
+</description>
 <metadata>
 <created>1781372376</created>
-<updated>1781372376</updated>
+<updated>1782794625</updated>
 <images>
 </images>
 <videos>
 </videos>
+<published>true</published>
+<locked>false</locked>
+<status></status>
+<hideInMenu>false</hideInMenu>
+<readtime>1</readtime>
 </metadata>
-<content><![CDATA[<p></p>]]></content>
+<content><![CDATA[
+<p></p>
+<h2 data-style-guide="headline" data-design-treatment="vert" data-primary="8" data-padding="xs" data-border-radius="xs">llklk</h2>
+<p></p>
+<place-holder type="image" accent-color="grey" directions="Drag and drop file to replace"></place-holder>
+<p><a href="#">Link to content</a></p>
+<p></p>
+<p></p>
+<p><a href="#"></a></p>
+]]></content>
 </item>
