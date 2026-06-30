@@ -15,7 +15,7 @@
         "canonical": true
       },
       "created": 1781318422,
-      "updated": 1782794625,
+      "updated": 1782795306,
       "git": {
         "vendor": "github",
         "branch": "gh-pages"
@@ -135,10 +135,10 @@
       "order": 1,
       "parent": "item-lesson-1",
       "title": "New Page",
-      "description": "\nllklk\n\n\nLink to content\n\n\n\n",
+      "description": "\nllklk\n\n\nLink to content\n&#60;explode-quiz&#62;&#60;/explode-quiz&#62;\n&#60;explode-quiz&#62;&#60;/explode-quiz&#62;\n\n",
       "metadata": {
         "created": 1781372376,
-        "updated": 1782794625,
+        "updated": 1782795306,
         "images": [],
         "videos": [],
         "published": true,

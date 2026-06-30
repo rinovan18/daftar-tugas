@@ -16087,7 +16087,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
             property: "questions",
             title: "Daftar Soal",
             description: "Array soal kustom (JSON)",
-            inputMethod: "textarea",
+            inputMethod: "code-editor",
           },
           {
             property: "scriptFunctionName",
@@ -16098,33 +16098,6 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
           },
         ],
         advanced: [],
-        developer: [],
-      },
-      saveOptions: {
-        unsetAttributes: [
-          "_screen",
-          "_studentName",
-          "_currentIndex",
-          "_score",
-          "_answered",
-          "_selectedIndex",
-          "_feedbackText",
-          "_feedbackPositive",
-          "_validationError",
-          "_nameInputValue",
-          "_editing",
-          "_tempQuestions",
-          "_editingIndex",
-          "_tempQuestionText",
-          "_tempChoice0",
-          "_tempChoice1",
-          "_tempChoice2",
-          "_tempChoice3",
-          "_tempCorrectIndex",
-          "_editorOrigin",
-          "editing",
-          "editable",
-        ],
       },
     };
   }
@@ -16132,59 +16105,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
   static get properties() {
     return {
       ...super.properties,
-      questions: {
-        type: Array,
-        attribute: "questions",
-        reflect: true,
-        converter: {
-          fromAttribute(value) {
-            if (value == null || value === "") return undefined;
-            if (Array.isArray(value)) return value;
-            if (typeof value === "object") return value;
-
-            const text = String(value).trim();
-            if (
-              !text ||
-              text === "[object Object]" ||
-              text === "undefined" ||
-              text === "null"
-            ) {
-              return undefined;
-            }
-
-            if (!(text.startsWith("[") || text.startsWith("{"))) {
-              return undefined;
-            }
-
-            try {
-              const parsed = JSON.parse(text);
-              if (Array.isArray(parsed)) return parsed;
-              if (
-                parsed &&
-                typeof parsed === "object" &&
-                Array.isArray(parsed.questions)
-              ) {
-                return parsed.questions;
-              }
-              return undefined;
-            } catch (_) {
-              return undefined;
-            }
-          },
-          toAttribute(value) {
-            if (!Array.isArray(value)) return null;
-            try {
-              return JSON.stringify(value);
-            } catch (e) {
-              console.warn(
-                "[explode-quiz] Gagal serialize questions ke atribut:",
-                e,
-              );
-              return null;
-            }
-          },
-        },
-      },
+      questions: { type: Array, attribute: true },
       scriptFunctionName: { type: String, attribute: true },
       editable: { type: Boolean, attribute: true, reflect: true },
       editing: { type: Boolean, attribute: true, reflect: true },
@@ -16307,35 +16228,10 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
     };
   }
 
-  _isValidQuestionItem(item) {
-    return !!(
-      item &&
-      typeof item === "object" &&
-      typeof item.question === "string" &&
-      Array.isArray(item.choices) &&
-      item.choices.length >= 2 &&
-      Number.isInteger(item.correctIndex) &&
-      item.correctIndex >= 0 &&
-      item.correctIndex < item.choices.length
-    );
-  }
-
-  _normalizeQuestions(value) {
-    if (!Array.isArray(value)) return DEFAULT_QUESTIONS;
-    const normalized = value.filter((item) => this._isValidQuestionItem(item));
-    return normalized.length > 0 ? normalized : DEFAULT_QUESTIONS;
-  }
-
   updated(changedProperties) {
     super.updated(changedProperties);
-    if (changedProperties.has("questions")) {
-      const normalized = this._normalizeQuestions(this.questions);
-      if (normalized !== this.questions) {
-        this.questions = normalized;
-      }
-      if (this._currentIndex >= this.questions.length) {
-        this._currentIndex = 0;
-      }
+    if (this.questions && this.questions.length === 0) {
+      this.questions = DEFAULT_QUESTIONS;
     }
   }
 
