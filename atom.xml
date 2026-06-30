@@ -3,7 +3,7 @@
   <title>pen-todo</title>
   <link href="https://localhost:3000/sites/pen-todo/" rel="self" />
   <subtitle>own course</subtitle>
-  <updated>2026-06-30T04:55:47.000Z</updated>
+  <updated>2026-06-30T05:00:03.000Z</updated>
   <author>
       <name></name>
   </author>
@@ -99,7 +99,7 @@ Wrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaway
   <entry>
     <title>New Page</title>
     <id>item-88892e53-0178-4d1a-9d05-793ec6d783bb</id>
-    <updated>2026-06-30T05:00:03.000Z</updated>
+    <updated>2026-06-30T05:00:37.000Z</updated>
     <published>2026-06-13T17:39:36.000Z</published>
     <summary>
 llklk
@@ -126,7 +126,8 @@ Link to content
 <p>jfkdlsjlkfds</p>
 <p></p>
 <p></p>
-<p><explode-quiz questions="[{&quot;question&quot;:&quot;Apa ibu kota Indonesia?&quot;,&quot;choices&quot;:[&quot;Bandung&quot;,&quot;Surabaya&quot;,&quot;Jakarta&quot;,&quot;Medan&quot;],&quot;correctIndex&quot;:2},{&quot;question&quot;:&quot;Berapa hasil dari 7 × 8?&quot;,&quot;choices&quot;:[&quot;54&quot;,&quot;56&quot;,&quot;58&quot;,&quot;60&quot;],&quot;correctIndex&quot;:1},{&quot;question&quot;:&quot;Planet terdekat dengan Matahari adalah?&quot;,&quot;choices&quot;:[&quot;Venus&quot;,&quot;Bumi&quot;,&quot;Mars&quot;,&quot;Merkurius&quot;],&quot;correctIndex&quot;:3}]" script-function-name="submitQuizResult" _current-index="0" _selected-index="-1" _temp-questions="[]" _editing-index="-1" _temp-correct-index="0" _editor-origin="result"></explode-quiz>
+<p><explode-quiz questions="[{&quot;question&quot;:&quot;Apa ibu kota Indonesia?&quot;,&quot;choices&quot;:[&quot;Bandung&quot;,&quot;Surabaya&quot;,&quot;Jakarta&quot;,&quot;Medan&quot;],&quot;correctIndex&quot;:2},{&quot;question&quot;:&quot;Berapa hasil dari 7 × 8?&quot;,&quot;choices&quot;:[&quot;54&quot;,&quot;56&quot;,&quot;58&quot;,&quot;60&quot;],&quot;correctIndex&quot;:1},{&quot;question&quot;:&quot;Planet terdekat dengan Matahari adalah?&quot;,&quot;choices&quot;:[&quot;Venus&quot;,&quot;Bumi&quot;,&quot;Mars&quot;,&quot;Merkurius&quot;],&quot;correctIndex&quot;:3},{&quot;question&quot;:&quot;fdsafds&quot;,&quot;choices&quot;:[&quot;11&quot;,&quot;221&quot;,&quot;233&quot;,&quot;44&quot;],&quot;correctIndex&quot;:0}]" script-function-name="submitQuizResult" _current-index="0" _selected-index="-1" _temp-questions="[{&quot;question&quot;:&quot;Apa ibu kota Indonesia?&quot;,&quot;choices&quot;:[&quot;Bandung&quot;,&quot;Surabaya&quot;,&quot;Jakarta&quot;,&quot;Medan&quot;],&quot;correctIndex&quot;:2},{&quot;question&quot;:&quot;Berapa hasil dari 7 × 8?&quot;,&quot;choices&quot;:[&quot;54&quot;,&quot;56&quot;,&quot;58&quot;,&quot;60&quot;],&quot;correctIndex&quot;:1},{&quot;question&quot;:&quot;Planet terdekat dengan Matahari adalah?&quot;,&quot;choices&quot;:[&quot;Venus&quot;,&quot;Bumi&quot;,&quot;Mars&quot;,&quot;Merkurius&quot;],&quot;correctIndex&quot;:3},{&quot;question&quot;:&quot;fdsafds&quot;,&quot;choices&quot;:[&quot;11&quot;,&quot;221&quot;,&quot;233&quot;,&quot;44&quot;],&quot;correctIndex&quot;:0}]" _editing-index="-1" _temp-correct-index="0" _editor-origin="result"></explode-quiz>
+
 </p>
 <p></p>
 <p><a href="#"></a>
