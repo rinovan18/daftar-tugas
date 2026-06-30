@@ -2,37 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://localhost:3000/sites/pen-todo/syllabus</loc>
-    <lastmod>2026-06-29T16:43:41.000Z</lastmod>
+    <lastmod>2026-06-30T03:31:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/pen-todo/lesson-1</loc>
-    <lastmod>2026-06-13T02:40:22.000Z</lastmod>
+    <lastmod>2026-06-30T03:31:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/pen-todo/lesson-1-introduction</loc>
-    <lastmod>2026-06-13T18:48:41.000Z</lastmod>
+    <lastmod>2026-06-30T03:31:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/pen-todo/lesson-1-content</loc>
-    <lastmod>2026-06-29T16:45:00.000Z</lastmod>
+    <lastmod>2026-06-30T03:31:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://localhost:3000/sites/pen-todo/lesson-1-conclusion</loc>
-    <lastmod>2026-06-29T16:45:29.000Z</lastmod>
+    <lastmod>2026-06-30T03:31:40.000Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://localhost:3000/sites/pen-todo/new-page</loc>
+    <lastmod>2026-06-30T03:31:40.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://localhost:3000/sites/pen-todo/new-page</loc>
-    <lastmod>2026-06-13T17:39:36.000Z</lastmod>
+    <loc>https://localhost:3000/sites/pen-todo/new-page-1</loc>
+    <lastmod>2026-06-30T03:31:41.000Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

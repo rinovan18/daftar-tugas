@@ -15,7 +15,7 @@
         "canonical": true
       },
       "created": 1781318422,
-      "updated": 1782751529,
+      "updated": 1782790301,
       "git": {
         "vendor": "github",
         "branch": "gh-pages"
@@ -75,11 +75,12 @@
         "hideInMenu": false,
         "tags": "syllabus,overview",
         "created": 1781318422,
-        "updated": 1782751421,
+        "updated": 1782790300,
         "locked": false,
         "readtime": 1,
         "videos": [],
-        "images": []
+        "images": [],
+        "status": ""
       }
     },
     {
@@ -99,12 +100,14 @@
           "overview"
         ],
         "created": 1781318422,
-        "updated": 1781318422
+        "updated": 1782790300,
+        "locked": false,
+        "status": ""
       }
     },
     {
       "id": "item-lesson-1-intro",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-lesson-1-intro/index.html",
       "slug": "lesson-1-introduction",
       "order": 0,
@@ -116,16 +119,17 @@
         "hideInMenu": false,
         "tags": "intro,context",
         "created": 1781318422,
-        "updated": 1781376521,
+        "updated": 1782790300,
         "locked": false,
         "readtime": 1,
         "videos": [],
-        "images": []
+        "images": [],
+        "status": ""
       }
     },
     {
       "id": "item-lesson-1-content",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-lesson-1-content/index.html",
       "slug": "lesson-1-content",
       "order": 1,
@@ -137,20 +141,40 @@
         "hideInMenu": false,
         "tags": "content,instruction",
         "created": 1781318422,
-        "updated": 1782751500,
+        "updated": 1782790300,
         "locked": false,
         "readtime": 1,
         "videos": [],
-        "images": []
+        "images": [],
+        "status": ""
+      }
+    },
+    {
+      "id": "item-88892e53-0178-4d1a-9d05-793ec6d783bb",
+      "indent": 1,
+      "location": "pages/item-88892e53-0178-4d1a-9d05-793ec6d783bb/index.html",
+      "slug": "new-page",
+      "order": 2,
+      "parent": "item-lesson-1",
+      "title": "New Page",
+      "description": "",
+      "metadata": {
+        "created": 1781372376,
+        "updated": 1782790300,
+        "images": [],
+        "videos": [],
+        "published": true,
+        "locked": false,
+        "status": ""
       }
     },
     {
       "id": "item-lesson-1-conclusion",
-      "indent": 0,
+      "indent": 2,
       "location": "pages/item-lesson-1-conclusion/index.html",
       "slug": "lesson-1-conclusion",
-      "order": 3,
-      "parent": "item-lesson-1",
+      "order": 0,
+      "parent": "item-88892e53-0178-4d1a-9d05-793ec6d783bb",
       "title": "Lesson 1: Conclusion",
       "description": "Lesson 1 Conclusion\nWrap up Lesson 1 by revisiting the learning objectives, summarizing key takeaways, and pointing learners toward next steps such as reflections, assessments, or the next lesson.\n\n\n",
       "metadata": {
@@ -158,43 +182,31 @@
         "hideInMenu": false,
         "tags": "conclusion,summary",
         "created": 1781318422,
-        "updated": 1782751529,
+        "updated": 1782790300,
         "locked": false,
         "readtime": 1,
         "videos": [],
-        "images": []
-      }
-    },
-    {
-      "id": "item-88892e53-0178-4d1a-9d05-793ec6d783bb",
-      "indent": 0,
-      "location": "pages/item-88892e53-0178-4d1a-9d05-793ec6d783bb/index.html",
-      "slug": "new-page",
-      "order": 1,
-      "parent": "item-lesson-1",
-      "title": "New Page",
-      "description": "",
-      "metadata": {
-        "created": 1781372376,
-        "updated": 1781372376,
         "images": [],
-        "videos": []
+        "status": ""
       }
     },
     {
       "id": "item-53184bd3-b1bd-4b95-a01a-b460db2b8add",
-      "indent": 0,
+      "indent": 1,
       "location": "pages/item-53184bd3-b1bd-4b95-a01a-b460db2b8add/index.html",
       "slug": "new-page-1",
-      "order": 1,
+      "order": 3,
       "parent": "item-lesson-1",
       "title": "New Page",
       "description": "",
       "metadata": {
         "created": 1782790230,
-        "updated": 1782790230,
+        "updated": 1782790301,
         "images": [],
-        "videos": []
+        "videos": [],
+        "published": true,
+        "locked": false,
+        "status": ""
       }
     }
   ]
