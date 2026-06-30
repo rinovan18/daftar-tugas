@@ -16098,6 +16098,7 @@ class ExplodeQuiz extends I18NMixin(DDDSuper(i)) {
           },
         ],
         advanced: [],
+        developer: [],
       },
       saveOptions: {
         unsetAttributes: [
