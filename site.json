@@ -180,6 +180,22 @@
         "images": [],
         "videos": []
       }
+    },
+    {
+      "id": "item-53184bd3-b1bd-4b95-a01a-b460db2b8add",
+      "indent": 0,
+      "location": "pages/item-53184bd3-b1bd-4b95-a01a-b460db2b8add/index.html",
+      "slug": "new-page-1",
+      "order": 1,
+      "parent": "item-lesson-1",
+      "title": "New Page",
+      "description": "",
+      "metadata": {
+        "created": 1782790230,
+        "updated": 1782790230,
+        "images": [],
+        "videos": []
+      }
     }
   ]
 }
